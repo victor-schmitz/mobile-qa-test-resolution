@@ -1,25 +1,24 @@
-import * as React from 'react'
+import * as React from "react";
 
-import { Text } from 'react-native'
+import {
+  Container,
+  TemperatureText,
+  PrecipitationsText,
+  MaxAndMinText,
+} from "./Box.styles";
+import { Icon } from "../../assets/icons/icon";
+import { useBoxController } from "./Box.controller";
 
-import { Container } from './Box.styles'
-import { Icon } from '../../assets/icons/icon'
-
-export default function Box (): React.ReactElement {
+export default function Box(): React.ReactElement {
+  const { forecast } = useBoxController();
   return (
-    <Container >
-        <Icon icon="sun"
-        width="310"
-        />
-        <Text>
-            28º
-        </Text>
-        <Text>
-            Pricipitations
-        </Text>
-        <Text>
-            Max.: 31º Min.: 25º
-        </Text>
+    <Container>
+      <Icon icon="sun" width="310" />
+      <TemperatureText>{forecast[0]?.max}º</TemperatureText>
+      <PrecipitationsText>Precipitação</PrecipitationsText>
+      <MaxAndMinText>
+        Max.: {forecast[0]?.max}º  Min.: {forecast[0]?.min}º
+      </MaxAndMinText>
     </Container>
-  )
+  );
 }

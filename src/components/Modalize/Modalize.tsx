@@ -1,12 +1,16 @@
 import React, { ReactElement } from 'react'
 
-import { Text, View } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 
 import { ModalizeFilterProps } from './Modalize.props'
 import {
+  ButtonSelectCity,
+  Container,
+  TextSelectCity,
   style
 } from './Modalize.styles'
+import { Cities } from './city'
 
 export const ModalizeLocation = ({
   modalizeRef
@@ -23,15 +27,15 @@ export const ModalizeLocation = ({
       avoidKeyboardLikeIOS
       keyboardAvoidingOffset={-500}
     >
-        <View style={{
-          flex: 1,
-          flexDirection: 'row',
-          height: 100,
-          padding: 20
-        }}>
-        <Text>Modalize</Text>
-        </View>
-
+      <Container>
+         {
+          Cities.map((item, index) => (
+            <ButtonSelectCity key={index} >
+              <TextSelectCity>{item}</TextSelectCity>
+            </ButtonSelectCity>
+          ))
+         }
+         </Container>
     </Modalize>
   )
 }

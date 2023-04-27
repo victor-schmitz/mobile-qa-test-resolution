@@ -13,6 +13,7 @@ import NextForecast from "../../components/NextForecast/NextForecast";
 export default function HomeScreen(): ReactElement {
   const { modalizeRef, onOpen } = useHomeController();
   return (
+    <> 
     <Background>
       <Header onOpen={onOpen} />
       <Box />
@@ -25,7 +26,8 @@ export default function HomeScreen(): ReactElement {
       <Card paddingVertical={12}>
         <NextForecast />
       </Card>
-      <ModalizeLocation modalizeRef={modalizeRef} />
     </Background>
+      <ModalizeLocation modalizeRef={modalizeRef} />
+      </>
   );
 }

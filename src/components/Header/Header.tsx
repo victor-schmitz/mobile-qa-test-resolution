@@ -8,7 +8,7 @@ export default function Header ({ onOpen }: any): React.ReactElement {
   return (
     <Container >
         <PickerLocation onOpen={onOpen}/>
-        <Icon icon="bell" />
+        <Icon icon="bell"  width='27'/>
     </Container>
   )
 }

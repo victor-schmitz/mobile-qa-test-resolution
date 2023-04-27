@@ -1,19 +1,25 @@
-import * as React from 'react'
+import * as React from "react";
 
-import { Text } from 'react-native'
-
-import { Container } from './Environmental.styles'
-import { Icon } from '../../assets/icons/icon'
+import { Box, Container, Text } from "./Environmental.styles";
+import { Icon } from "../../assets/icons/icon"; 
+import { useEnvironmentalController } from "./Environmental.controller";
 
 export default function Environmental(): React.ReactElement {
+  const { data } = useEnvironmentalController();
   return (
     <Container>
-      <Icon icon="humidity" width="20" />
-      <Text>6%</Text>
-      <Icon icon="temperature" />
-      <Text>90%</Text>
-      <Icon icon="wind" />
-      <Text>19km/h</Text>
+      <Box>
+        <Icon icon="humidity" width="24" />
+        <Text>{data.humidity}%</Text>
+      </Box>
+      <Box>
+        <Icon icon="temperature" width="24" />
+        <Text>{data.temp}%</Text>
+      </Box>
+      <Box>
+        <Icon icon="wind" width="22" />
+        <Text>{data.wind_speedy}</Text>
+      </Box>
     </Container>
-  )
+  );
 }

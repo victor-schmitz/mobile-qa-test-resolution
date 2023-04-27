@@ -9,6 +9,9 @@ import { triggerError } from '../../helpers/triggerError'
 const initialState = {
   isLoading: false,
   data: {},
+  forecast:[],
+  date : '',
+
 }
 
 const useTimeAndTemperature = create<useTimeAndTemperatureProps>((set, get) => ({
@@ -17,8 +20,8 @@ const useTimeAndTemperature = create<useTimeAndTemperatureProps>((set, get) => (
   getTimeAndTemperature: async () => {
     const { makeAsync } = get()
     const handle = async (): Promise<any> => {
-      const data = await getTimeAndTemperatureRequest({})
-      set({ data })
+      const data = await getTimeAndTemperatureRequest({}) 
+      set({ data, forecast: data.forecast , date: data.date})
     }
     const onError = (): void => {
       triggerError(FailedRequest.title, FailedRequest.description, FailedRequest.buttonTitle)

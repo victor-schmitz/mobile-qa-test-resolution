@@ -27,9 +27,7 @@ export default function App(): ReactElement {
       try {
         await SplashScreen.preventAutoHideAsync();
         void onLayoutRootView();
-      } catch (e) {
-        console.warn("[prepare] App.tsx:", e);
-      } finally {
+      }   finally {
         setIsReady(true);
       }
     }
