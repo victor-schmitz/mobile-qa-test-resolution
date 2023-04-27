@@ -6,40 +6,50 @@ export const Container = styled.View`
 `;
 
 interface IContent {
-    color:  boolean
+  color: boolean;
 }
 
 export const Content = styled.View<IContent>`
-  background-color:  ${({ color }) => color ? 'rgba(80, 150, 255, 0.5)' : 'transparent'};
+  background-color: ${({ color }) =>
+    color ? "rgba(80, 150, 255, 0.5)" : "transparent"};
   height: 155px;
   width: 70px;
   border-radius: 20px;
   margin: 10px;
   align-items: center;
   justify-content: space-around;
-  border-color:  ${({ color }) => color ? 'rgba(80, 150, 255, 1)' : 'transparent'};
-  border-width: ${({ color }) => color ? 1 : 0}px;
+  border-color: ${({ color }) =>
+    color ? "rgba(80, 150, 255, 1)" : "transparent"};
+  border-width: ${({ color }) => (color ? 1 : 0)}px;
 `;
 
 export const TextTime = styled.Text`
- font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
-  color: ${({ theme }) => theme.COLORS.WHITE}; 
+  font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
+  color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const TodayText = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD_SF};
-  color: ${({ theme }) => theme.COLORS.WHITE}; 
+  color: ${({ theme }) => theme.COLORS.WHITE};
 `;
 
 export const MonthText = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR_SF};
-  color: ${({ theme }) => theme.COLORS.WHITE}; 
-`
+  color: ${({ theme }) => theme.COLORS.WHITE};
+`;
 
 export const TextDate = styled.Text`
- font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
+  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR_SF};
-  color: ${({ theme }) => theme.COLORS.WHITE}; 
-`
+  color: ${({ theme }) => theme.COLORS.WHITE};
+`;
+
+export const ContainerTitleCard = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-horizontal: ${({ theme }) => theme.SPACING.MD}px;
+`;

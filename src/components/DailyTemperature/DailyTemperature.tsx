@@ -1,60 +1,31 @@
 import * as React from "react";
 
-import { FlatList, View } from "react-native";
+import { FlatList } from "react-native";
 
 import {
   Container,
+  ContainerTitleCard,
   Content,
   MonthText,
   TextDate,
   TextTime,
   TodayText,
 } from "./DailyTemperature.style";
-import { Icon } from "../../assets/icons/icon";
-import useTimeAndTemperature from "../../store/timeAndTemperature/timeAndTemperature";
 import moment from "moment";
+import { useDailyTemperature } from "./DailyTemperature.controller";
 
 export default function DailyTemperature(): React.ReactElement {
-  const { forecast, date } = useTimeAndTemperature();
-
-  const compareDate = (itemDate: string) => {
-    
-    const dateSplited = date.split("/"); 
-
-    if (itemDate === `${dateSplited[0]}/${dateSplited[1]}`) {
-      return true;
-    }
-    return false;
-  };
-
-  const setIcons = (text: string) => {
-    if (text.includes("Chuva")) {
-      return <Icon icon="bigRainDrop" width="50" />;
-    }
-    if (text.includes("clear_day")) {
-      return <Icon icon="sun" width="50" />;
-    } else {
-      return <Icon icon="sun" width="50" />;
-    }
-  };
+  const { setIcons, compareDate, forecast } = useDailyTemperature();
 
   return (
     <Container>
-      <View
-        style={{
-          justifyContent: "space-between",
-          flexDirection: "row",
-          alignItems: "center",
-          width: "100%",
-          paddingHorizontal: 20,
-        }}
-      >
+      <ContainerTitleCard>
         <TodayText>Today</TodayText>
         <MonthText>{moment().format("MMMM, DD")}</MonthText>
-      </View>
+      </ContainerTitleCard>
 
       <FlatList
-        data={forecast} 
+        data={forecast}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.date.toString()}
         horizontal
