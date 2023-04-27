@@ -11,23 +11,23 @@ const initialState = {
   data: {},
   forecast:[],
   date : '',
+  codition : ''
 
 }
 
 const useTimeAndTemperature = create<useTimeAndTemperatureProps>((set, get) => ({
   ...initialState,
 
-  getTimeAndTemperature: async () => {
+  getTimeAndTemperature: async (coords, city) => {
     const { makeAsync } = get()
     const handle = async (): Promise<any> => {
-      const data = await getTimeAndTemperatureRequest({}) 
-      set({ data, forecast: data.forecast , date: data.date})
+      const data = await getTimeAndTemperatureRequest(coords, city) 
+      set({ data, forecast: data.forecast , date: data.date, codition : data.forecast[0].condition})
     }
     const onError = (): void => {
       triggerError(FailedRequest.title, FailedRequest.description, FailedRequest.buttonTitle)
     }
     void makeAsync({ handle, onError })
-
   },
 
   makeAsync: async ({ handle, onError, onFinally }) => {

@@ -10,7 +10,7 @@ export const Container = styled.View`
 `
 export const Text = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD_SF};
   color: ${({ theme }) => theme.COLORS.WHITE}; 
   margin-left: ${normalize(5)}px;
 `

@@ -6,14 +6,14 @@ import {
   PrecipitationsText,
   MaxAndMinText,
 } from "./Box.styles";
-import { Icon } from "../../assets/icons/icon";
 import { useBoxController } from "./Box.controller";
 
 export default function Box(): React.ReactElement {
-  const { forecast } = useBoxController();
+  const { forecast , verifyCondition} = useBoxController();
+  
   return (
     <Container>
-      <Icon icon="sun" width="310" />
+     {verifyCondition(forecast[0]?.condition)}
       <TemperatureText>{forecast[0]?.max}º</TemperatureText>
       <PrecipitationsText>Precipitação</PrecipitationsText>
       <MaxAndMinText>

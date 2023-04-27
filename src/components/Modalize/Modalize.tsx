@@ -11,10 +11,21 @@ import {
   style
 } from './Modalize.styles'
 import { Cities } from './city'
+import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export const ModalizeLocation = ({
   modalizeRef
 }: ModalizeFilterProps): ReactElement => {
+  console.log(Cities)
+  const { getTimeAndTemperature } = useTimeAndTemperature();
+  const closeModalize = async (city) => {
+    console.log(city)
+    await getTimeAndTemperature({ 
+      city
+    }); 
+    modalizeRef.current?.close()
+  }
+
   return (
     <Modalize
       ref={modalizeRef}
@@ -30,7 +41,7 @@ export const ModalizeLocation = ({
       <Container>
          {
           Cities.map((item, index) => (
-            <ButtonSelectCity key={index} >
+            <ButtonSelectCity key={index} onPress={()=> closeModalize(item)} >
               <TextSelectCity>{item}</TextSelectCity>
             </ButtonSelectCity>
           ))

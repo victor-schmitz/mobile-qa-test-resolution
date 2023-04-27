@@ -1,5 +1,5 @@
 export const Cities = [
-    "São Paulo",
+    "Sao Paulo",
     "Rio de Janeiro",
     "Belo Horizonte",
     "Salvador",

@@ -14,6 +14,8 @@ export default function App(): ReactElement {
     "SF-Pro-Display-Regular": require("./assets/fonts/SF-Pro-Display-Regular.ttf"),
     "SF-Pro-Display-Semibold": require("./assets/fonts/SF-Pro-Display-Semibold.ttf"),
     "SF-Pro-Display-Bold": require("./assets/fonts/SF-Pro-Display-Bold.ttf"),
+    "AlegreyaSans-Bold": require("./assets/fonts/AlegreyaSans-Bold.ttf"),
+    "AlegreyaSans-Medium": require("./assets/fonts/AlegreyaSans-Medium.ttf"),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -37,7 +39,7 @@ export default function App(): ReactElement {
   if (!isReady || !fontsLoaded) {
     return <></>;
   }
-
+ 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>

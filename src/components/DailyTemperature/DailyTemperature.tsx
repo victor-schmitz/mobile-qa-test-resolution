@@ -18,6 +18,7 @@ export default function DailyTemperature(): React.ReactElement {
   const { forecast, date } = useTimeAndTemperature();
 
   const compareDate = (itemDate: string) => {
+    
     const dateSplited = date.split("/"); 
 
     if (itemDate === `${dateSplited[0]}/${dateSplited[1]}`) {
@@ -27,7 +28,7 @@ export default function DailyTemperature(): React.ReactElement {
   };
 
   const setIcons = (text: string) => {
-    if (text.includes("Chuvas")) {
+    if (text.includes("Chuva")) {
       return <Icon icon="bigRainDrop" width="50" />;
     }
     if (text.includes("clear_day")) {
@@ -53,10 +54,8 @@ export default function DailyTemperature(): React.ReactElement {
       </View>
 
       <FlatList
-        data={forecast}
-        contentContainerStyle={{
-          width: "100%",
-        }}
+        data={forecast} 
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.date.toString()}
         horizontal
         renderItem={({ item }) => (

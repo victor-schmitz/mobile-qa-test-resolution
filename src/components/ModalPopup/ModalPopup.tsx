@@ -1,11 +1,7 @@
 import React, { ReactElement } from 'react'
 
-import { MaterialCommunityIcons } from '@expo/vector-icons'
-import { navigationRef } from '@helpers/navigatorRef'
-import { Dialog } from '@rneui/themed'
-import useErrorStore from '@store/error/error.store'
-import theme from '@theme/index'
-import { normalize } from '@utils/normalize'
+import { MaterialCommunityIcons } from '@expo/vector-icons'  
+  
 
 import { ModalPopupProps } from './ModalPopup.props'
 import {
@@ -19,41 +15,34 @@ import {
   ModalPopupButton,
   TextButton
 } from './ModalPopup.style'
+import { Modal } from 'react-native'
+import useErrorStore from '../../store/error/error.store'
+import { normalize } from '../../utils/normalize'
 export const ModalPopup = ({ icon, color }: ModalPopupProps): ReactElement => {
   const {
     hasError,
-    error,
-    type,
+    error, 
     closePopup,
     title,
-    buttonText,
-    route,
-    back
+    buttonText,  
   } = useErrorStore()
 
   if (hasError) {
     return (
-      <Dialog
-        isVisible={hasError}
-        onBackdropPress={back ? () => {
-          closePopup()
-          navigationRef.goBack()
-        } : () => closePopup()}
-        overlayStyle={{ borderRadius: theme.BORDER_RADIUS.LG }}
-      >
+      <Modal
+        visible={hasError} 
+             >
         <Container>
           <ModalPopupButton
-            onPress={back ? () => {
-              closePopup()
-              navigationRef.goBack()
-            } : () => closePopup()}
+            onPress={  () =>  closePopup() }
           >
             <MaterialCommunityIcons name="close" color={'#000'} size={normalize(15)}
             />
           </ModalPopupButton>
           <MaterialCommunityIcons
-            name={type === 'success' ? 'check-circle-outline' : 'close-circle-outline'}
-            color={type === 'success' ? '#00740C' : '#CD3D14'} size={normalize(35)}
+            name={'close-circle-outline'}
+            color={ '#CD3D14'}
+            size={normalize(35)}
           />
           <DialogTitle
             title={title} />
@@ -67,20 +56,18 @@ export const ModalPopup = ({ icon, color }: ModalPopupProps): ReactElement => {
               color={color}
               onPress={() => {
                 closePopup()
-                if (route) {
-                  navigationRef.current?.navigate(route)
-                }
+                
               }
               }>
-              {icon || buttonText === 'Compartilhar' &&
-                <MaterialCommunityIcons name={icon as any || 'share-variant-outline'}
+              
+                <MaterialCommunityIcons name={icon as any  }
                   color={'#fff'} size={normalize(18)}
-                  style={styles.icon} />}
+                  style={styles.icon} />
               <TextButton>{buttonText}</TextButton>
             </Button>
           </ContainerButton>
         </Container>
-      </Dialog >
+      </Modal >
     )
   }
   return null as unknown as ReactElement

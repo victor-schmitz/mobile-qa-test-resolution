@@ -28,18 +28,18 @@ export const TextTime = styled.Text`
 
 export const TodayText = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.XL}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD_SF};
   color: ${({ theme }) => theme.COLORS.WHITE}; 
 `;
 
 export const MonthText = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.LG}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR_SF};
   color: ${({ theme }) => theme.COLORS.WHITE}; 
 `
 
 export const TextDate = styled.Text`
  font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
-  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR};
+  font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR_SF};
   color: ${({ theme }) => theme.COLORS.WHITE}; 
 `
