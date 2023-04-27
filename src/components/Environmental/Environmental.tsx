@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Box, Container, Text } from "./Environmental.styles";
-import { Icon } from "../../assets/icons/icon"; 
+import { Icon } from "../../assets/icons/icon";
 import { useEnvironmentalController } from "./Environmental.controller";
 
 export default function Environmental(): React.ReactElement {

@@ -31,6 +31,7 @@ export default {
     XXL: normalize(64)  
   },
   SPACING: { 
+    P: normalize(5),
     M: normalize(12),
     MD: normalize(20), 
     LM: normalize(30),
