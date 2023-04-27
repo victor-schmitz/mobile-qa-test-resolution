@@ -5,5 +5,5 @@ export const Container = styled.View`
     border-radius: 20px; 
     flex-direction: row;
     align-items: center;
-    
 `
+export const TextLocation = styled.Text``

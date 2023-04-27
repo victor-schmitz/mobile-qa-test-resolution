@@ -1,7 +1,14 @@
 import styled from 'styled-components/native'
+import { normalize } from '../../utils/normalize'
 
-export const Container = styled.View` 
+interface IProps {
+    paddingVertical?: number
+}
+
+export const Container = styled.View<IProps>` 
     background-color:  rgba(0, 16, 38, 0.2); 
     width: 100%;
-    border-radius: 20px;  
+    border-radius: ${normalize(20)}px;
+    margin-bottom: ${normalize(20)}px;
+    padding-vertical:  ${props => props.paddingVertical ? normalize(props.paddingVertical) : normalize(0)}px;
 `

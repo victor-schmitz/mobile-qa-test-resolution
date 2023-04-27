@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Text, TouchableHighlight } from 'react-native'
 
-import { Container } from './PickerLocation.styles'
+import { Container, TextLocation } from './PickerLocation.styles'
 import { Icon } from '../../assets/icons/icon'
 
 export default function PickerLocation({ onOpen }: any): React.ReactElement {
@@ -10,7 +10,7 @@ export default function PickerLocation({ onOpen }: any): React.ReactElement {
     <Container>
       <Icon icon="location" />
       <TouchableHighlight onPress={() => onOpen()}>
-        <Text>Location</Text>
+        <TextLocation>Location</TextLocation>
       </TouchableHighlight>
       <Icon icon="select" />
     </Container>
