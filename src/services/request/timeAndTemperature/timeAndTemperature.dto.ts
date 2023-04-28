@@ -13,6 +13,7 @@ export interface IData {
   forecast: IForecast[]
   humidity: number
   date: string
+  currently: string
 }
 
 interface IForecast {

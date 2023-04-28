@@ -15,7 +15,7 @@ export default function Box(): React.ReactElement {
     <Container>
      {verifyCondition(forecast[0]?.condition)}
       <TemperatureText>{forecast[0]?.max}º</TemperatureText>
-      <PrecipitationsText>Precipitação</PrecipitationsText>
+      <PrecipitationsText>Presipitations</PrecipitationsText>
       <MaxAndMinText>
         Max.: {forecast[0]?.max}º  Min.: {forecast[0]?.min}º
       </MaxAndMinText>

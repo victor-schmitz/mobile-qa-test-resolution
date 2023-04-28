@@ -13,12 +13,13 @@ const initialState = {
     wind_speedy: '',
     description: '',
     forecast: [],
-    humidity: 0
+    humidity: 0,
+    currently: ''
   },
   forecast: [],
   date: '',
   condition: '',
-  loading: false
+  loading: true
 }
 
 const useTimeAndTemperature = create<useTimeAndTemperatureProps>(
@@ -30,6 +31,7 @@ const useTimeAndTemperature = create<useTimeAndTemperatureProps>(
       set({ isLoading: true })
       const handle = async (): Promise<void> => {
         const data = await getTimeAndTemperatureRequest({ coords, city })
+        data.currently = 'day'
         if (data) {
           set({
             data,

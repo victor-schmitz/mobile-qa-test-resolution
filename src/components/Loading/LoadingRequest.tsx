@@ -1,7 +1,6 @@
 import React, { ReactElement, useEffect, useRef } from 'react'
 
 import { Animation, Container } from './LoadingRequest.styles'
-import theme from '../../theme'
 
 export const LoadingRequest = (): ReactElement => {
   const animation = useRef(null)
@@ -13,18 +12,13 @@ export const LoadingRequest = (): ReactElement => {
   }, [])
 
   return (
-
-        <Container
-            colors={theme.COLORS.CONDITION}
-        >
-
+        <Container >
             <Animation
                 style={{ width: 200, height: 200 }}
                 autoPlay
                 ref={animation}
                 source={require('../Animations/loading.json')}
             />
-
         </Container>
 
   )

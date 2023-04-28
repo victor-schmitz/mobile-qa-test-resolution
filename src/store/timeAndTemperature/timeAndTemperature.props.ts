@@ -27,6 +27,7 @@ interface IData {
   description: string
   forecast: IForecast[]
   humidity: number
+  currently: string
 }
 
 interface IForecast {

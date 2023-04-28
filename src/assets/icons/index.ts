@@ -1,4 +1,5 @@
 import cloud from './dailyTemperatura/cloud.svg'
+import moon from './dailyTemperatura/moon.svg'
 import sunCloud from './dailyTemperatura/sunCloud.svg'
 import humidity from './environmental/humidity.svg'
 import temperature from './environmental/temperature.svg'
@@ -24,7 +25,8 @@ export const Icons = {
   cloudZap,
   bigRainDrop,
   cloud,
-  sunCloud
+  sunCloud,
+  moon
 }
 
 export type IconTypes = keyof typeof Icons

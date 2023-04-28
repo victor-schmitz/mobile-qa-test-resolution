@@ -7,7 +7,6 @@ export const useModalize = (modalizeRef: React.RefObject<IHandles>): IModalize =
   const { getTimeAndTemperature } = useTimeAndTemperature()
   const closeModalize = (city: string): void => {
     void getTimeAndTemperature({ city })
-
     modalizeRef.current?.close()
   }
 

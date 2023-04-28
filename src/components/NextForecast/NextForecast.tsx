@@ -18,7 +18,7 @@ import { Icon } from '../../assets/icons/icon'
 import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export default function NextForecast(): React.ReactElement {
-  const { forecast } = useTimeAndTemperature()
+  const { forecast, data } = useTimeAndTemperature()
 
   function convertDayOfWeek(day: string): string | null {
     switch (day) {
@@ -42,13 +42,21 @@ export default function NextForecast(): React.ReactElement {
   }
 
   const setIcons = (text: string): React.ReactElement => {
-    if (text.includes('Chuvas')) {
-      return <Icon icon="bigRainDrop" width="50" />
-    }
-    if (text.includes('clear_day')) {
-      return <Icon icon="sun" width="50" />
+    if (data.currently === 'noite') {
+      if (text.includes('Chuva')) {
+        return <Icon icon="bigRainDrop" width="50" />
+      } else {
+        return <Icon icon="moon" width="30" />
+      }
     } else {
-      return <Icon icon="sun" width="50" />
+      if (text.includes('Chuva')) {
+        return <Icon icon="bigRainDrop" width="50" />
+      }
+      if (text.includes('clear_day')) {
+        return <Icon icon="sun" width="50" />
+      } else {
+        return <Icon icon="sun" width="50" />
+      }
     }
   }
 
