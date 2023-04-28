@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react'
 
 import { View } from 'react-native'
 
-import { IUseBoxController } from './Box.props'
-import { Animation } from './Box.styles'
+import { IUseWeatherController } from './Weather.props'
+import { Animation } from './Weather.styles'
 import { Icon } from '../../assets/icons/icon'
 import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 import { normalize } from '../../utils/normalize'
 
-export const useBoxController = (): IUseBoxController => {
+export const useWeatherController = (): IUseWeatherController => {
   const { forecast, data } = useTimeAndTemperature()
 
   const animation = useRef(null)

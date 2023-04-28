@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react'
 
 import { useHomeController } from './HomeScreen.controller'
 import Background from '../../components/Background/Background'
-import Box from '../../components/Box/Box'
+import Weather from '../../components/Box/Weather'
 import Card from '../../components/Card/Card'
 import DailyTemperature from '../../components/DailyTemperature/DailyTemperature'
 import Environmental from '../../components/Environmental/Environmental'
@@ -22,7 +22,7 @@ export default function HomeScreen(): ReactElement {
           <LoadingRequest />
         ) : (
           <>
-            <Box />
+            <Weather />
             <Card>
               <Environmental />
             </Card>
