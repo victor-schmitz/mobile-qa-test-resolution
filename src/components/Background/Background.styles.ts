@@ -9,7 +9,7 @@ export const Container = styled(LinearGradient)`
   height: 100%; 
   padding-horizontal: ${normalize(30)}px;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 `
 
 export const Wrapper = styled.SafeAreaView`
