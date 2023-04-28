@@ -15,9 +15,7 @@ import {
 export const ModalizeLocation = ({
   modalizeRef
 }: ModalizeFilterProps): ReactElement => {
-  const {
-    closeModalize
-  } = useModalize(modalizeRef)
+  const { closeModalize } = useModalize(modalizeRef)
 
   return (
     <Modalize
@@ -32,14 +30,15 @@ export const ModalizeLocation = ({
       keyboardAvoidingOffset={-500}
     >
       <Container>
-         {
-          Cities.map((item, index) => (
-            <ButtonSelectCity key={index} onPress={async () => closeModalize(item)} >
-              <TextSelectCity>{item}</TextSelectCity>
-            </ButtonSelectCity>
-          ))
-         }
-         </Container>
+        {Cities.map((item, index) => (
+          <ButtonSelectCity
+            key={index}
+            onPress={async () => closeModalize(item)}
+          >
+            <TextSelectCity>{item}</TextSelectCity>
+          </ButtonSelectCity>
+        ))}
+      </Container>
     </Modalize>
   )
 }

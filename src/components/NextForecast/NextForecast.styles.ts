@@ -3,15 +3,15 @@ import styled from 'styled-components/native'
 import { normalize } from '../../utils/normalize'
 
 export const Container = styled.View`
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.BORDER_RADIUS.LG}px;
 `
 export const Content = styled.View`
-  border-radius: 20px;
+  border-radius: ${({ theme }) => theme.BORDER_RADIUS.LG}px;
   align-items: center;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
-  margin-bottom: ${normalize(10)}px;
+  margin-bottom: ${({ theme }) => theme.SPACING.PM}px;
   height: ${normalize(50)}px;
   padding-horizontal: ${normalize(20)}px;
 `
@@ -43,7 +43,7 @@ export const ContainerTextTemperature = styled.View`
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  margin-left: ${normalize(10)}px;
+  margin-left: ${({ theme }) => theme.SPACING.PM}px;
 `
 
 export const TextCMax = styled.Text`
@@ -60,4 +60,17 @@ export const TextCMin = styled.Text`
 
 export const ContentMaxMinTemp = styled.View`
   flex-direction: row;
+`
+
+export const TitleNewForecast = styled.View`
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-horizontal:${({ theme }) => theme.SPACING.MD}px;
+`
+export const ContainerIcon = styled.View`
+  width: 33%;
+  justify-content: center;
+  align-items: center;
 `

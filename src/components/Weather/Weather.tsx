@@ -1,21 +1,21 @@
 import * as React from 'react'
 
-import { useBoxController } from './Box.controller'
+import { useWeatherController } from './Weather.controller'
 import {
   Container,
   TemperatureText,
   PrecipitationsText,
   MaxAndMinText
-} from './Box.styles'
+} from './Weather.styles'
 
-export default function Box(): React.ReactElement {
-  const { forecast, verifyCondition } = useBoxController()
+export default function Weather(): React.ReactElement {
+  const { forecast, verifyCondition } = useWeatherController()
 
   return (
     <Container>
      {verifyCondition(forecast[0]?.condition)}
       <TemperatureText>{forecast[0]?.max}º</TemperatureText>
-      <PrecipitationsText>Presipitations</PrecipitationsText>
+      <PrecipitationsText>Precipitations</PrecipitationsText>
       <MaxAndMinText>
         Max.: {forecast[0]?.max}º  Min.: {forecast[0]?.min}º
       </MaxAndMinText>
