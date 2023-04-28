@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { View } from 'react-native'
-
+import { useNextForecastController } from './NextForecast.controller'
 import {
   Container,
+  ContainerIcon,
   ContainerTextTemperature,
   Content,
   ContentMaxMinTemp,
@@ -12,80 +12,30 @@ import {
   TextCMin,
   TextDay,
   TextTemperatureMax,
-  TextTemperatureMin
+  TextTemperatureMin,
+  TitleNewForecast
 } from './NextForecast.styles'
 import { Icon } from '../../assets/icons/icon'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export default function NextForecast(): React.ReactElement {
-  const { forecast, data } = useTimeAndTemperature()
-
-  function convertDayOfWeek(day: string): string | null {
-    switch (day) {
-      case 'Seg':
-        return 'Monday'
-      case 'Ter':
-        return 'Tuesday'
-      case 'Qua':
-        return 'Wednesday'
-      case 'Qui':
-        return 'Thursday'
-      case 'Sex':
-        return 'Friday'
-      case 'Sáb':
-        return 'Saturday'
-      case 'Dom':
-        return 'Sunday'
-      default:
-        return null
-    }
-  }
-
-  const setIcons = (text: string): React.ReactElement => {
-    if (data.currently === 'noite') {
-      if (text.includes('Chuva')) {
-        return <Icon icon="bigRainDrop" width="50" />
-      } else {
-        return <Icon icon="moon" width="30" />
-      }
-    } else {
-      if (text.includes('Chuva')) {
-        return <Icon icon="bigRainDrop" width="50" />
-      }
-      if (text.includes('clear_day')) {
-        return <Icon icon="sun" width="50" />
-      } else {
-        return <Icon icon="sun" width="50" />
-      }
-    }
-  }
+  const {
+    setIcons,
+    convertDayOfWeek,
+    forecast
+  } = useNextForecastController()
 
   return (
     <Container>
-      <View
-        style={{
-          justifyContent: 'space-between',
-          flexDirection: 'row',
-          alignItems: 'center',
-          width: '100%',
-          paddingHorizontal: 20
-        }}
-      >
+      <TitleNewForecast >
         <NextForecastText>Next Forecast</NextForecastText>
         <Icon icon="calendar" width="22" />
-      </View>
+      </TitleNewForecast>
       {forecast.map((item) => (
         <Content key={item.date}>
           <TextDay>{convertDayOfWeek(item.weekday)}</TextDay>
-          <View
-            style={{
-              width: '33%',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-          >
+          <ContainerIcon >
             {setIcons(item.description)}
-          </View>
+          </ContainerIcon>
 
           <ContentMaxMinTemp>
             <ContainerTextTemperature>
