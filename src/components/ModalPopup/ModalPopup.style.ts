@@ -20,7 +20,7 @@ export const TextButton = styled.Text`
   font-style: normal;
   font-weight: 500;
   font-size: ${normalize(12)}px;
-  color: #000;
+  color: #fff;
   text-align: center;
 `
 interface IButtonProps {

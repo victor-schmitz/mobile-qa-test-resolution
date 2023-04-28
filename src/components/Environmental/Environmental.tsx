@@ -13,11 +13,11 @@ export default function Environmental(): React.ReactElement {
         <Text>{data.humidity}%</Text>
       </Box>
       <Box>
-        <Icon icon="temperature" width="24" />
+        <Icon icon="temperature" width="20" />
         <Text>{data.temp}%</Text>
       </Box>
       <Box>
-        <Icon icon="wind" width="22" />
+        <Icon icon="wind" width="20" />
         <Text>{data.wind_speedy}</Text>
       </Box>
     </Container>

@@ -1,11 +1,11 @@
 
 import axios, { AxiosInstance } from 'axios'
 
-const createInstance = (baseURL: string, type?: string): AxiosInstance => {
+const createInstance = (baseURL: string): AxiosInstance => {
   const instance = axios.create({
     baseURL,
     headers: {
-      Accept: type || 'application/json'
+      Accept: 'application/json'
     }
   })
 

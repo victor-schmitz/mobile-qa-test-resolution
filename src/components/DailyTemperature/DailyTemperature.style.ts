@@ -12,7 +12,7 @@ interface IContent {
 
 export const Content = styled.View<IContent>`
   background-color: ${({ color }) =>
-    color ? 'rgba(80, 150, 255, 0.5)' : 'transparent'};
+    color ? 'rgba(000, 000, 000, 0.2)' : 'transparent'};
   height: 155px;
   width: ${normalize(65)}px;
   border-radius: ${({ theme }) => theme.SPACING.MD}px;
@@ -20,7 +20,7 @@ export const Content = styled.View<IContent>`
   align-items: center;
   justify-content: space-around;
   border-color: ${({ color }) =>
-    color ? 'rgba(80, 150, 255, 1)' : 'transparent'};
+    color ? 'rgba(80, 150, 255, 0.8)' : 'transparent'};
   border-width: ${({ color }) => (color ? 1 : 0)}px;
 `
 
@@ -53,4 +53,5 @@ export const ContainerTitleCard = styled.View`
   align-items: center;
   width: 100%;
   padding-horizontal: ${({ theme }) => theme.SPACING.MD}px;
+  margin-bottom: ${({ theme }) => theme.SPACING.M}px;
 `
