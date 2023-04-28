@@ -6,9 +6,9 @@ export default {
     BLACK: '#000000',
     GREY: 'rgba(255,255,255,0.5)',
     CONDITION: ['#29B2DD', '#33AADD', '#2DC8EA'],
-    CLEAR_NIGHT: ['#08244F', '#134CB5', '#0B42AB'],
-    RAIN: ['#08244F', '#134CB5', '#0B42AB']
-
+    DAY_RAIN: ['#08244F', '#134CB5', '#0B42AB'],
+    NIGHT_RAIN: ['#00033F', '#000443', '#000'],
+    NIGHT_CLEAN: ['#44444F', '#888', '#444']
   },
   FONT_FAMILY: {
     REGULAR_SF: 'SF-Pro-Display-Regular',
