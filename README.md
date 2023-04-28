@@ -11,11 +11,21 @@ Below, you can find videos demonstrating the use of the app in different scenari
 <table>
   <tr>
     <td>
+      <p>Daytime - IOS</p>
       <video src="https://user-images.githubusercontent.com/59540379/235064730-8ea328ce-1d38-4ee5-abcc-999211c5e8df.mp4" width="400" height="300" controls></video>
     </td>
     <td>
+      <p>Nighttime - IOS</p>
       <video src="https://user-images.githubusercontent.com/59540379/235065579-d936e540-086b-4154-96d8-16b8fc62e7d4.mp4" width="400" height="300" controls></video>
     </td>
+        <td>
+      <p>Daytime - ANDROID</p>
+            <video src="https://user-images.githubusercontent.com/59540379/235074744-271351fc-20b0-4998-bae5-2927c8664785.webm" width="400" height="300" controls></video>
+    </td> 
+       <td>
+      <p>Nighttime - ANDROID</p>
+       <video src="https://user-images.githubusercontent.com/59540379/235074172-60807b7c-8e8e-44aa-8d99-721dce1159f0.webm" width="400" height="300" controls></video>
+    </td> 
   </tr>
 </table>
 
