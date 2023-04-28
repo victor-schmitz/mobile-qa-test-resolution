@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
-import { View } from 'react-native'
-
 import { IUseWeatherController } from './Weather.props'
-import { Animation } from './Weather.styles'
+import { Animation, ContainerAnimation, ContentAnimationDay, ContentAnimationNight } from './Weather.styles'
 import { Icon } from '../../assets/icons/icon'
 import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 import { normalize } from '../../utils/normalize'
@@ -23,18 +21,8 @@ export const useWeatherController = (): IUseWeatherController => {
   const verifyCondition = (condition: string): React.ReactElement => {
     if (data.currently === 'noite') {
       return (
-        <View
-          style={{
-            width: 300,
-            height: 300,
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: normalize(-50)
-
-          }}
-        >
+        <ContainerAnimation >
           {condition !== 'rain' ? (
-
               <Animation
                 autoPlay
                 autoSize
@@ -43,14 +31,7 @@ export const useWeatherController = (): IUseWeatherController => {
               />
 
           ) : (
-            <View
-              style={{
-                width: 300,
-                height: 300,
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
+            <ContentAnimationNight>
               <Animation
                 autoPlay
                 ref={animation}
@@ -62,29 +43,22 @@ export const useWeatherController = (): IUseWeatherController => {
                 ref={animation}
                 source={require('../Animations/cloud.json')}
               />
-            </View>
+            </ContentAnimationNight>
           )}
-        </View>
+        </ContainerAnimation>
       )
     }
 
     if (condition !== 'rain') {
       return (
-        <View
-          style={{
-            width: 200,
-            height: 200,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
+        <ContentAnimationDay >
           <Animation
             autoPlay
             ref={animation}
             source={require('../Animations/sun.json')}
           />
           <Icon icon="sun" width="200" />
-        </View>
+        </ContentAnimationDay>
       )
     } else {
       return <Icon icon="sun_rain" width="200" />
