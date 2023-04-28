@@ -31,7 +31,7 @@ const useTimeAndTemperature = create<useTimeAndTemperatureProps>(
       set({ isLoading: true })
       const handle = async (): Promise<void> => {
         const data = await getTimeAndTemperatureRequest({ coords, city })
-        data.currently = 'noite'
+        data.currently = 'day'
         if (data) {
           set({
             data,
