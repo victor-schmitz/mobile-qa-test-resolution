@@ -3,46 +3,6 @@
 The application developed as part of the mobile developer selection process is a weather forecast solution developed in React-Native. It uses data from a weather forecast API to display accurate and up-to-date information such as temperature, humidity, wind speed, and other relevant information for the user's current location. The aim is to provide an intuitive and user-friendly experience, with a clear and organized display of the weather information.
 
 
-## Requirements
-
-Node.js
-
-Yarn (ou NPM)
-
-Expo CLI
-  
-  
-  
-## How to run the project
-To run this project, you need to follow these steps:
-
-Install Node.js on your computer from the official website: https://nodejs.org/
-
-Install the Yarn package manager (you can also use NPM, which comes with Node.js, if you prefer) by running the following command:
-
-```bash
-  npm install --global yarn 
-```
-Install the Expo CLI globally using Yarn (or NPM):
-```bash
-   yarn global add expo-cli
-```
-Clone this repository to your computer:
-```bash
-   git clone https://github.com/ermessonlima/mobile-weather-app.git
-```
-Navigate to the cloned project folder and install the dependencies:
-```bash
-   cd mobile-weather-app
-   yarn install
-```
-Start the Expo development server:
-```bash
-   npx expo start
-```
-Expo will display a QR code. To view the app on your mobile device, install the Expo Go app, which is available on the App Store (iOS) or the Google Play Store (Android). Once you have installed the app, open it and scan the QR code using your phone's camera or the scanning function within the Expo Go app. This will launch the app on your mobile device, allowing you to view and test its features.
- 
-
 
 ## Demonstration
 
@@ -84,6 +44,48 @@ Below, you can find videos demonstrating the use of the app in different scenari
 - React Native Location: a library for getting the user's location in React Native apps
 
 **Back-end:** Api hgbrasil
+
+## Requirements
+
+Node.js
+
+Yarn (ou NPM)
+
+Expo CLI
+  
+  
+  
+## How to run the project
+To run this project, you need to follow these steps:
+
+Install Node.js on your computer from the official website: https://nodejs.org/
+
+Install the Yarn package manager (you can also use NPM, which comes with Node.js, if you prefer) by running the following command:
+
+```bash
+  npm install --global yarn 
+```
+Install the Expo CLI globally using Yarn (or NPM):
+```bash
+   yarn global add expo-cli
+```
+Clone this repository to your computer:
+```bash
+   git clone https://github.com/ermessonlima/mobile-weather-app.git
+```
+Navigate to the cloned project folder and install the dependencies:
+```bash
+   cd mobile-weather-app
+   yarn install
+```
+Start the Expo development server:
+```bash
+   npx expo start
+```
+Expo will display a QR code. To view the app on your mobile device, install the Expo Go app, which is available on the App Store (iOS) or the Google Play Store (Android). Once you have installed the app, open it and scan the QR code using your phone's camera or the scanning function within the Expo Go app. This will launch the app on your mobile device, allowing you to view and test its features.
+ 
+
+
 
 ## Support
 - For support, please send an email to ermessonlimadossantos@gmail.com or contact us via phone/WhatsApp at: +55 82991209850.
