@@ -1,6 +1,5 @@
-export interface IUserDailyTemperature {
-  setIcons: (text: string) => React.ReactElement
-  compareDate: (itemDate: string) => boolean
+export interface IUseWeatherController {
+  verifyCondition: (condition: string) => React.ReactElement
   forecast: IForecast[]
 }
 

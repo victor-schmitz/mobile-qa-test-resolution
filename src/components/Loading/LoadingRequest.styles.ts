@@ -2,6 +2,8 @@ import AnimatedLottieView from 'lottie-react-native'
 import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 
+import { normalize } from '../../utils/normalize'
+
 const { height } = Dimensions.get('window')
 
 export const Container = styled.View`
@@ -13,4 +15,7 @@ export const Container = styled.View`
   margin-top: ${height * 0.25}px;
 `
 
-export const Animation = styled(AnimatedLottieView)``
+export const Animation = styled(AnimatedLottieView)`
+  width: ${normalize(200)}px;
+  height: ${normalize(200)}px;
+`

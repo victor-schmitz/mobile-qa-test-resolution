@@ -1,25 +1,18 @@
-import React, { ReactElement, useEffect, useRef } from 'react'
+import React, { ReactElement } from 'react'
 
+import { useLoadingRequestController } from './LoadingRequest.controller'
 import { Animation, Container } from './LoadingRequest.styles'
 
 export const LoadingRequest = (): ReactElement => {
-  const animation = useRef(null)
-  useEffect(() => {
-    if (animation.current) {
-      // @ts-expect-error
-      animation?.current.play()
-    }
-  }, [])
+  const { animation } = useLoadingRequestController()
 
   return (
-        <Container >
-            <Animation
-                style={{ width: 200, height: 200 }}
-                autoPlay
-                ref={animation}
-                source={require('../Animations/loading.json')}
-            />
-        </Container>
-
+    <Container>
+      <Animation
+        autoPlay
+        ref={animation}
+        source={require('../Animations/loading.json')}
+      />
+    </Container>
   )
 }
