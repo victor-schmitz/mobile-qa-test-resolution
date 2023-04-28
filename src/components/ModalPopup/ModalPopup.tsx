@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
-import { MaterialCommunityIcons } from '@expo/vector-icons'  
-  
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { Modal } from 'react-native'
 
 import { ModalPopupProps } from './ModalPopup.props'
 import {
@@ -15,26 +15,26 @@ import {
   ModalPopupButton,
   TextButton
 } from './ModalPopup.style'
-import { Modal } from 'react-native'
 import useErrorStore from '../../store/error/error.store'
 import { normalize } from '../../utils/normalize'
+
 export const ModalPopup = ({ icon, color }: ModalPopupProps): ReactElement => {
   const {
     hasError,
-    error, 
+    error,
     closePopup,
     title,
-    buttonText,  
+    buttonText
   } = useErrorStore()
 
   if (hasError) {
     return (
       <Modal
-        visible={hasError} 
+        visible={hasError}
              >
         <Container>
           <ModalPopupButton
-            onPress={  () =>  closePopup() }
+            onPress={ () => closePopup() }
           >
             <MaterialCommunityIcons name="close" color={'#000'} size={normalize(15)}
             />
@@ -56,11 +56,9 @@ export const ModalPopup = ({ icon, color }: ModalPopupProps): ReactElement => {
               color={color}
               onPress={() => {
                 closePopup()
-                
               }
               }>
-              
-                <MaterialCommunityIcons name={icon as any  }
+                <MaterialCommunityIcons name={icon as any }
                   color={'#fff'} size={normalize(18)}
                   style={styles.icon} />
               <TextButton>{buttonText}</TextButton>

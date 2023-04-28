@@ -6,12 +6,10 @@ export interface ModalPopupProps {
     primary: string
   }
 }
-
 interface MessageObjectType {
   color: string
   icon: React.FC<SvgProps>
 }
-
 export interface MessageTypes {
   error: MessageObjectType
   success: MessageObjectType

@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react'
 
-import { FlatList, Text, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 
+import { Cities } from './city'
+import { useModalize } from './Modalize.controller'
 import { ModalizeFilterProps } from './Modalize.props'
 import {
   ButtonSelectCity,
@@ -10,21 +11,13 @@ import {
   TextSelectCity,
   style
 } from './Modalize.styles'
-import { Cities } from './city'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export const ModalizeLocation = ({
   modalizeRef
 }: ModalizeFilterProps): ReactElement => {
-  console.log(Cities)
-  const { getTimeAndTemperature } = useTimeAndTemperature();
-  const closeModalize = async (city) => {
-    console.log(city)
-    await getTimeAndTemperature({ 
-      city
-    }); 
-    modalizeRef.current?.close()
-  }
+  const {
+    closeModalize
+  } = useModalize(modalizeRef)
 
   return (
     <Modalize
@@ -41,7 +34,7 @@ export const ModalizeLocation = ({
       <Container>
          {
           Cities.map((item, index) => (
-            <ButtonSelectCity key={index} onPress={()=> closeModalize(item)} >
+            <ButtonSelectCity key={index} onPress={async () => closeModalize(item)} >
               <TextSelectCity>{item}</TextSelectCity>
             </ButtonSelectCity>
           ))

@@ -1,16 +1,16 @@
-import * as React from "react";
+import * as React from 'react'
 
+import { useBoxController } from './Box.controller'
 import {
   Container,
   TemperatureText,
   PrecipitationsText,
-  MaxAndMinText,
-} from "./Box.styles";
-import { useBoxController } from "./Box.controller";
+  MaxAndMinText
+} from './Box.styles'
 
 export default function Box(): React.ReactElement {
-  const { forecast , verifyCondition} = useBoxController();
-  
+  const { forecast, verifyCondition } = useBoxController()
+
   return (
     <Container>
      {verifyCondition(forecast[0]?.condition)}
@@ -20,5 +20,5 @@ export default function Box(): React.ReactElement {
         Max.: {forecast[0]?.max}º  Min.: {forecast[0]?.min}º
       </MaxAndMinText>
     </Container>
-  );
+  )
 }

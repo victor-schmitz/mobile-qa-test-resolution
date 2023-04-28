@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { Box, Container, Text } from "./Environmental.styles";
-import { Icon } from "../../assets/icons/icon";
-import { useEnvironmentalController } from "./Environmental.controller";
+import { useEnvironmentalController } from './Environmental.controller'
+import { Box, Container, Text } from './Environmental.styles'
+import { Icon } from '../../assets/icons/icon'
 
 export default function Environmental(): React.ReactElement {
-  const { data } = useEnvironmentalController();
+  const { data } = useEnvironmentalController()
   return (
     <Container>
       <Box>
@@ -21,5 +21,5 @@ export default function Environmental(): React.ReactElement {
         <Text>{data.wind_speedy}</Text>
       </Box>
     </Container>
-  );
+  )
 }

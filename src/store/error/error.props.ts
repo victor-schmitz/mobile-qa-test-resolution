@@ -4,12 +4,12 @@ export interface ErrorStoreProps {
   hasError: boolean
   error: string
   title: string
-  buttonText: string 
+  buttonText: string
   showErrorMessage: (title: string, error: string, type: keyof MessageTypes, buttonText: string) => void
-  closePopup: () => void  
+  closePopup: () => void
 }
 
-interface MessageObjectType { 
+interface MessageObjectType {
   icon: React.FC<SvgProps>
 }
 

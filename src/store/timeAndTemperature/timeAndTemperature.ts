@@ -1,46 +1,64 @@
-
 import { create } from 'zustand'
-import { useTimeAndTemperatureProps } from './timeAndTemperature.props'
-import { FailedRequest } from './timeAndTemperature.message'
-import { getTimeAndTemperatureRequest } from '../../services/request/timeAndTemperature/timeAndTemperature.request'
-import { triggerError } from '../../helpers/triggerError'
 
+import { FailedRequest } from './timeAndTemperature.message'
+import { useTimeAndTemperatureProps } from './timeAndTemperature.props'
+import { triggerError } from '../../helpers/triggerError'
+import { getTimeAndTemperatureRequest } from '../../services/request/timeAndTemperature/timeAndTemperature.request'
 
 const initialState = {
   isLoading: false,
-  data: {},
-  forecast:[],
-  date : '',
-  codition : ''
-
+  data: {
+    temp: 0,
+    city: '',
+    wind_speedy: '',
+    description: '',
+    forecast: [],
+    humidity: 0
+  },
+  forecast: [],
+  date: '',
+  condition: ''
 }
 
-const useTimeAndTemperature = create<useTimeAndTemperatureProps>((set, get) => ({
-  ...initialState,
+const useTimeAndTemperature = create<useTimeAndTemperatureProps>(
+  (set, get) => ({
+    ...initialState,
 
-  getTimeAndTemperature: async (coords, city) => {
-    const { makeAsync } = get()
-    const handle = async (): Promise<any> => {
-      const data = await getTimeAndTemperatureRequest(coords, city) 
-      set({ data, forecast: data.forecast , date: data.date, codition : data.forecast[0].condition})
-    }
-    const onError = (): void => {
-      triggerError(FailedRequest.title, FailedRequest.description, FailedRequest.buttonTitle)
-    }
-    void makeAsync({ handle, onError })
-  },
-
-  makeAsync: async ({ handle, onError, onFinally }) => {
-    try {
-      await handle()
-    } catch (error: any) {
-      if (onError != null) {
-        return onError(error)
+    getTimeAndTemperature: async ({ coords, city }) => {
+      const { makeAsync } = get()
+      const handle = async (): Promise<void> => {
+        const data = await getTimeAndTemperatureRequest({ coords, city })
+        if (data) {
+          set({
+            data,
+            forecast: data.forecast,
+            date: data.date,
+            condition: data.forecast[0].condition
+          })
+        }
       }
-    } finally {
-      if (onFinally != null) onFinally()
-      set({ isLoading: false })
+      const onError = (): void => {
+        triggerError(
+          FailedRequest.title,
+          FailedRequest.description,
+          FailedRequest.buttonTitle
+        )
+      }
+      void makeAsync({ handle, onError })
+    },
+
+    makeAsync: async ({ handle, onError, onFinally }) => {
+      try {
+        await handle()
+      } catch (error) {
+        if (onError != null) {
+          return onError(error)
+        }
+      } finally {
+        if (onFinally != null) onFinally()
+        set({ isLoading: false })
+      }
     }
-  }
-}))
+  })
+)
 export default useTimeAndTemperature

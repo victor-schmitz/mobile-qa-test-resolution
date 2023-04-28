@@ -1,19 +1,19 @@
-import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet } from 'react-native'
 import styled from 'styled-components/native'
-import { normalize } from '../../utils/normalize'
+
 import theme from '../../theme'
+import { normalize } from '../../utils/normalize'
 
 export const style = StyleSheet.create({
   motiview: {
-    paddingBottom: 40,
+    paddingBottom: normalize(40),
     backgroundColor: '#000'
   },
   modalize: {
-    marginBottom: -50,
+    marginBottom: normalize(-50),
     width: '100%',
     flex: 1,
-    backgroundColor:  theme.COLORS.WHITE,
+    backgroundColor: theme.COLORS.WHITE
   }
 })
 

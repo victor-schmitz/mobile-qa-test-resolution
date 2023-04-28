@@ -1,7 +1,9 @@
+import { MutableRefObject } from 'react'
+
 export type ContainerProps = {
   children: React.ReactNode
 }
 
 export interface IUseBackgroundController {
-  animation: React.ReactElement
+  animation: MutableRefObject<null>
 }

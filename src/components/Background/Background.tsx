@@ -1,31 +1,30 @@
-import React  from "react";
- 
-import {  ScrollView } from "react-native";
+import React from 'react'
 
-import { ContainerProps } from "./Background.props";
-import { Animation, Container, ContainerAnimation, SafeAreaView } from "./Background.styles";
-import theme from "../../theme"; 
-import { useBackgroundController } from "./Background.controller";
+import { ScrollView } from 'react-native'
+
+import { useBackgroundController } from './Background.controller'
+import { ContainerProps } from './Background.props'
+import { Animation, Container, ContainerAnimation, SafeAreaView } from './Background.styles'
+import theme from '../../theme'
 
 export default function Background({
-  children,
+  children
 }: ContainerProps): React.ReactElement {
-  
-  const {animation} = useBackgroundController()
+  const { animation } = useBackgroundController()
   return (
     <Container colors={theme.COLORS.CONDITION}>
       <SafeAreaView >
         <ScrollView showsVerticalScrollIndicator={false}>
-          <ContainerAnimation  >
+          <ContainerAnimation >
             <Animation
               autoPlay
               ref={animation}
-              source={require("../Animations/animation.json")}
+              source={require('../Animations/animation.json')}
             />
           </ContainerAnimation>
           {children}
         </ScrollView>
       </SafeAreaView>
     </Container>
-  );
+  )
 }

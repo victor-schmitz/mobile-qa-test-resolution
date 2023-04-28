@@ -1,7 +1,9 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { FlatList } from "react-native";
+import moment from 'moment'
+import { FlatList } from 'react-native'
 
+import { useDailyTemperature } from './DailyTemperature.controller'
 import {
   Container,
   ContainerTitleCard,
@@ -9,19 +11,17 @@ import {
   MonthText,
   TextDate,
   TextTime,
-  TodayText,
-} from "./DailyTemperature.style";
-import moment from "moment";
-import { useDailyTemperature } from "./DailyTemperature.controller";
+  TodayText
+} from './DailyTemperature.style'
 
 export default function DailyTemperature(): React.ReactElement {
-  const { setIcons, compareDate, forecast } = useDailyTemperature();
+  const { setIcons, compareDate, forecast } = useDailyTemperature()
 
   return (
     <Container>
       <ContainerTitleCard>
         <TodayText>Today</TodayText>
-        <MonthText>{moment().format("MMMM, DD")}</MonthText>
+        <MonthText>{moment().format('MMMM, DD')}</MonthText>
       </ContainerTitleCard>
 
       <FlatList
@@ -38,5 +38,5 @@ export default function DailyTemperature(): React.ReactElement {
         )}
       />
     </Container>
-  );
+  )
 }

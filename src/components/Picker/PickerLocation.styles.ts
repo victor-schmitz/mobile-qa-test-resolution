@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+
 import { normalize } from '../../utils/normalize'
 
 export const Container = styled.TouchableOpacity`  
@@ -12,4 +13,4 @@ export const TextLocation = styled.Text`
     font-family: ${({ theme }) => theme.FONT_FAMILY.SEMIBOLD_SF};
     color: ${({ theme }) => theme.COLORS.WHITE};
     margin-horizontal: ${({ theme }) => theme.SPACING.M}px;
-` 
+`

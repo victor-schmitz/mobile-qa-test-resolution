@@ -1,20 +1,20 @@
-import { normalize } from "../utils/normalize";
+import { normalize } from '../utils/normalize'
 
 export default {
   COLORS: {
     WHITE: '#FFFFFF',
     BLACK: '#000000',
-    GREY : 'rgba(255,255,255,0.5)',
+    GREY: 'rgba(255,255,255,0.5)',
     CONDITION: ['#29B2DD', '#33AADD', '#2DC8EA'],
     CLEAR_NIGHT: ['#08244F', '#134CB5', '#0B42AB'],
     RAIN: ['#08244F', '#134CB5', '#0B42AB']
- 
+
   },
   FONT_FAMILY: {
-    REGULAR_SF: 'SF-Pro-Display-Regular', 
+    REGULAR_SF: 'SF-Pro-Display-Regular',
     MEDIUM_ALEGREYASANS: 'AlegreyaSans-Medium',
     SEMIBOLD_SF: 'SF-Pro-Display-Semibold',
-    BOLD_ALEGREYASANS : 'AlegreyaSans-Bold',
+    BOLD_ALEGREYASANS: 'AlegreyaSans-Bold',
     BOLD_SF: 'SF-Pro-Display-Bold'
   },
   FONT_WEIGHT: {
@@ -25,20 +25,21 @@ export default {
   },
   FONT_SIZE: {
     P: normalize(10),
-    MD: normalize(14), 
+    MD: normalize(14),
     LG: normalize(18),
     XL: normalize(20),
-    XXL: normalize(64)  
+    XXL: normalize(64)
   },
-  SPACING: { 
+  SPACING: {
     P: normalize(5),
+    PM: normalize(10),
     M: normalize(12),
-    MD: normalize(20), 
+    MD: normalize(20),
     LM: normalize(30),
     LG: normalize(38),
     XL: normalize(40)
   },
-  BORDER_RADIUS: {  
+  BORDER_RADIUS: {
     LG: normalize(20)
   }
 }

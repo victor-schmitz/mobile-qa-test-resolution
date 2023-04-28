@@ -1,33 +1,34 @@
-import { Icon } from "../../assets/icons/icon";
-import useTimeAndTemperature from "../../store/timeAndTemperature/timeAndTemperature";
+import React from 'react'
 
-export const useDailyTemperature = () => {
-    const { forecast, date } = useTimeAndTemperature();
+import { IUserDailyTemperature } from './DailyTemperature.props'
+import { Icon } from '../../assets/icons/icon'
+import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
-    const compareDate = (itemDate: string) => {
-      
-      const dateSplited = date.split("/"); 
-  
-      if (itemDate === `${dateSplited[0]}/${dateSplited[1]}`) {
-        return true;
-      }
-      return false;
-    };
-  
-    const setIcons = (text: string) => {
-      if (text.includes("Chuva")) {
-        return <Icon icon="bigRainDrop" width="50" />;
-      }
-      if (text.includes("clear_day")) {
-        return <Icon icon="sun" width="50" />;
-      } else {
-        return <Icon icon="sun" width="50" />;
-      }
-    };
+export const useDailyTemperature = (): IUserDailyTemperature => {
+  const { forecast, date } = useTimeAndTemperature()
 
-    return {
-      setIcons,
-      compareDate,
-      forecast
+  const compareDate = (itemDate: string): boolean => {
+    const dateSplited = date.split('/')
+    if (itemDate === `${dateSplited[0]}/${dateSplited[1]}`) {
+      return true
     }
+    return false
+  }
+
+  const setIcons = (text: string): React.ReactElement => {
+    if (text.includes('Chuva')) {
+      return <Icon icon="bigRainDrop" width="50" />
+    }
+    if (text.includes('clear_day')) {
+      return <Icon icon="sun" width="50" />
+    } else {
+      return <Icon icon="sun" width="50" />
+    }
+  }
+
+  return {
+    setIcons,
+    compareDate,
+    forecast
+  }
 }

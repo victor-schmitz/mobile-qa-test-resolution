@@ -1,8 +1,7 @@
-  
-import axios from 'axios' 
- 
 
-const createInstance = (baseURL: string, type?: string) => {
+import axios, { AxiosInstance } from 'axios'
+
+const createInstance = (baseURL: string, type?: string): AxiosInstance => {
   const instance = axios.create({
     baseURL,
     headers: {
@@ -19,10 +18,7 @@ const createInstance = (baseURL: string, type?: string) => {
     }
   )
 
-    
-
   return instance
 }
 
 export const instance = createInstance(process.env.REACT_APP_BASE_URL ?? '')
- 

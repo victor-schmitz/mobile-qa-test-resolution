@@ -1,6 +1,6 @@
-import * as React from "react";
+import * as React from 'react'
 
-import { FlatList, Text, View } from "react-native";
+import { View } from 'react-native'
 
 import {
   Container,
@@ -12,56 +12,55 @@ import {
   TextCMin,
   TextDay,
   TextTemperatureMax,
-  TextTemperatureMin,
-} from "./NextForecast.styles";
-import { Icon } from "../../assets/icons/icon";
-import { Icons } from "../../assets/icons";
-import useTimeAndTemperature from "../../store/timeAndTemperature/timeAndTemperature";
+  TextTemperatureMin
+} from './NextForecast.styles'
+import { Icon } from '../../assets/icons/icon'
+import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export default function NextForecast(): React.ReactElement {
-  const { forecast, date } = useTimeAndTemperature();
+  const { forecast } = useTimeAndTemperature()
 
-  function convertDayOfWeek(day) {
+  function convertDayOfWeek(day: string): string | null {
     switch (day) {
-      case "Seg":
-        return "Monday";
-      case "Ter":
-        return "Tuesday";
-      case "Qua":
-        return "Wednesday";
-      case "Qui":
-        return "Thursday";
-      case "Sex":
-        return "Friday";
-      case "Sáb":
-        return "Saturday";
-      case "Dom":
-        return "Sunday";
+      case 'Seg':
+        return 'Monday'
+      case 'Ter':
+        return 'Tuesday'
+      case 'Qua':
+        return 'Wednesday'
+      case 'Qui':
+        return 'Thursday'
+      case 'Sex':
+        return 'Friday'
+      case 'Sáb':
+        return 'Saturday'
+      case 'Dom':
+        return 'Sunday'
       default:
-        return null;
+        return null
     }
   }
 
-  const setIcons = (text: string) => {
-    if (text.includes("Chuvas")) {
-      return <Icon icon="bigRainDrop" width="50" />;
+  const setIcons = (text: string): React.ReactElement => {
+    if (text.includes('Chuvas')) {
+      return <Icon icon="bigRainDrop" width="50" />
     }
-    if (text.includes("clear_day")) {
-      return <Icon icon="sun" width="50" />;
+    if (text.includes('clear_day')) {
+      return <Icon icon="sun" width="50" />
     } else {
-      return <Icon icon="sun" width="50" />;
+      return <Icon icon="sun" width="50" />
     }
-  };
+  }
 
   return (
     <Container>
       <View
         style={{
-          justifyContent: "space-between",
-          flexDirection: "row",
-          alignItems: "center",
-          width: "100%",
-          paddingHorizontal: 20,
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          alignItems: 'center',
+          width: '100%',
+          paddingHorizontal: 20
         }}
       >
         <NextForecastText>Next Forecast</NextForecastText>
@@ -72,9 +71,9 @@ export default function NextForecast(): React.ReactElement {
           <TextDay>{convertDayOfWeek(item.weekday)}</TextDay>
           <View
             style={{
-              width: "33%",
-              justifyContent: "center",
-              alignItems: "center",
+              width: '33%',
+              justifyContent: 'center',
+              alignItems: 'center'
             }}
           >
             {setIcons(item.description)}
@@ -94,5 +93,5 @@ export default function NextForecast(): React.ReactElement {
         </Content>
       ))}
     </Container>
-  );
+  )
 }

@@ -1,8 +1,9 @@
-import useTimeAndTemperature from "../../store/timeAndTemperature/timeAndTemperature";
+import { IData } from './Environmental.props'
+import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
-export const useEnvironmentalController = () => {
-    const { data } = useTimeAndTemperature();
-    return {
-        data
-    }
+export const useEnvironmentalController = (): IData => {
+  const { data } = useTimeAndTemperature()
+  return {
+    data
+  }
 }
