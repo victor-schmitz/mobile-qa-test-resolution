@@ -13,13 +13,13 @@ export const useBackgroundController = (): IUseBackgroundController => {
       if (condition !== 'rain') {
         theme.COLORS.CONDITION = ['#29B2DD', '#33AADD', '#2DC8EA']
       } else {
-        theme.COLORS.CONDITION = ['#08244F', '#134CB5', '#0B42AB']
+        theme.COLORS.CONDITION = theme.COLORS.DAY_RAIN
       }
     } else {
       if (condition === 'rain') {
-        theme.COLORS.CONDITION = ['#00033F', '#000443', '#000']
+        theme.COLORS.CONDITION = theme.COLORS.NIGHT_RAIN
       } else {
-        theme.COLORS.CONDITION = ['#44444F', '#888', '#444']
+        theme.COLORS.CONDITION = theme.COLORS.NIGHT_CLEAN
       }
     }
 

@@ -35,7 +35,6 @@ export default function HomeScreen(): ReactElement {
           </>
         )}
       </Background>
-
       <ModalizeLocation modalizeRef={modalizeRef} />
     </>
   )
