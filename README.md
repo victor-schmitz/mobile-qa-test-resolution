@@ -35,13 +35,15 @@ Below, you can find videos demonstrating the use of the app in different scenari
 - Axios: a popular library for making HTTP requests
 - Moment: a library for parsing, validating, manipulating, and displaying dates and times
 - Styled Components: a library for styling React components using CSS
-
 - Zustand: a lightweight state management library for React
 - Lottie React Native: a library for adding animations to React Native apps
 - React Native SVG: a library for rendering SVG images in React Native
 - React Native Gesture Handler: a library for handling touch gestures in React Native apps
 - React Native Async Storage: a library for persisting data in React Native apps
 - React Native Location: a library for getting the user's location in React Native apps
+- Husky: a tool for adding git hooks to your project
+- Commitlint: a tool for enforcing commit message conventions
+- ESLint: a tool for enforcing JavaScript code style and identifying issues
 
 **Back-end:** Api hgbrasil
 
