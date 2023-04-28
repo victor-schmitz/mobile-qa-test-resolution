@@ -16,23 +16,26 @@ export default function HomeScreen(): ReactElement {
 
   return (
     <>
-      {isLoading ? (
-        <LoadingRequest />
-      ) : (
-        <Background>
-          <Header onOpen={onOpen} />
-          <Box />
-          <Card>
-            <Environmental />
-          </Card>
-          <Card paddingVertical={12}>
-            <DailyTemperature />
-          </Card>
-          <Card paddingVertical={12}>
-            <NextForecast />
-          </Card>
-        </Background>
-      )}
+      <Background>
+        <Header onOpen={onOpen} />
+        {isLoading ? (
+          <LoadingRequest />
+        ) : (
+          <>
+            <Box />
+            <Card>
+              <Environmental />
+            </Card>
+            <Card paddingVertical={12}>
+              <DailyTemperature />
+            </Card>
+            <Card paddingVertical={12}>
+              <NextForecast />
+            </Card>
+          </>
+        )}
+      </Background>
+
       <ModalizeLocation modalizeRef={modalizeRef} />
     </>
   )

@@ -22,17 +22,22 @@ export const useBoxController = (): IUseBoxController => {
   const verifyCondition = (condition: string): React.ReactElement => {
     if (condition !== 'rain') {
       return (
-      <View
-      style={{ width: 200, height: 200, alignItems: 'center', justifyContent: 'center' }}
-      >
-      <Animation
-
+        <View
+          style={{
+            width: 200,
+            height: 200,
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <Animation
             autoPlay
             ref={animation}
             source={require('../Animations/sun.json')}
           />
-      <Icon icon="sun" width="200" />
-      </View>)
+          <Icon icon="sun" width="200" />
+        </View>
+      )
     } else {
       return <Icon icon="sun_rain" width="200" />
     }

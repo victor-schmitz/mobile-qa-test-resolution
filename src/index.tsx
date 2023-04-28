@@ -29,14 +29,18 @@ export default function App(): ReactElement {
     async function prepare(): Promise<void> {
       try {
         await SplashScreen.preventAutoHideAsync()
-        void onLayoutRootView()
       } finally {
         setIsReady(true)
       }
     }
 
     void prepare()
+  }, [])
+
+  useEffect(() => {
+    void onLayoutRootView()
   }, [onLayoutRootView])
+
   if (!isReady || !fontsLoaded) {
     return <></>
   }

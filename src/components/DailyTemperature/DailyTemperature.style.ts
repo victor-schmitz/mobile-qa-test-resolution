@@ -14,9 +14,9 @@ export const Content = styled.View<IContent>`
   background-color: ${({ color }) =>
     color ? 'rgba(80, 150, 255, 0.5)' : 'transparent'};
   height: 155px;
-  width: ${normalize(70)}px;
+  width: ${normalize(65)}px;
   border-radius: ${({ theme }) => theme.SPACING.MD}px;
-  margin:  ${({ theme }) => theme.SPACING.PM}px;
+  margin-left:  ${({ theme }) => theme.SPACING.M}px;
   align-items: center;
   justify-content: space-around;
   border-color: ${({ color }) =>
