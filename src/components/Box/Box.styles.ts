@@ -1,4 +1,7 @@
+import LottieView from 'lottie-react-native'
 import styled from 'styled-components/native'
+
+import { normalize } from '../../utils/normalize'
 
 export const Container = styled.View`
   align-items: center;
@@ -22,4 +25,13 @@ export const MaxAndMinText = styled.Text`
   font-family: ${({ theme }) => theme.FONT_FAMILY.REGULAR_SF};
   color: ${({ theme }) => theme.COLORS.WHITE};
   margin-bottom:${({ theme }) => theme.SPACING.LM}px;
+`
+
+export const Animation = styled(LottieView)`
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  position: absolute;
+  top: ${normalize(-3)}px;
+  left: ${normalize(-5)}px;
 `
