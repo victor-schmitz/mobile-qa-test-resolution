@@ -10,17 +10,17 @@ import theme from '../../theme'
 export default function Background({
   children
 }: ContainerProps): React.ReactElement {
-  const { animation } = useBackgroundController()
+  const { animation, condition } = useBackgroundController()
   return (
     <Container colors={theme.COLORS.CONDITION}>
       <SafeAreaView >
         <ScrollView showsVerticalScrollIndicator={false}>
           <ContainerAnimation >
-            <Animation
-              autoPlay
-              ref={animation}
-              source={require('../Animations/animation.json')}
-            />
+            {condition !== 'rain' ? null : <Animation
+            autoPlay
+            ref={animation}
+            source={require('../Animations/animation.json')}
+          />}
           </ContainerAnimation>
           {children}
         </ScrollView>

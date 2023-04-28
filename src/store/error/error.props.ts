@@ -5,7 +5,7 @@ export interface ErrorStoreProps {
   error: string
   title: string
   buttonText: string
-  showErrorMessage: (title: string, error: string, type: keyof MessageTypes, buttonText: string) => void
+  showErrorMessage: (title: string, error: string, buttonText: string) => void
   closePopup: () => void
 }
 

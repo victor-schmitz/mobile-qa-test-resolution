@@ -7,26 +7,32 @@ import Card from '../../components/Card/Card'
 import DailyTemperature from '../../components/DailyTemperature/DailyTemperature'
 import Environmental from '../../components/Environmental/Environmental'
 import Header from '../../components/Header/Header'
+import { LoadingRequest } from '../../components/Loading/LoadingRequest'
 import { ModalizeLocation } from '../../components/Modalize/Modalize'
 import NextForecast from '../../components/NextForecast/NextForecast'
 
 export default function HomeScreen(): ReactElement {
-  const { modalizeRef, onOpen } = useHomeController()
+  const { modalizeRef, onOpen, isLoading } = useHomeController()
+
   return (
     <>
-      <Background>
-        <Header onOpen={onOpen} />
-        <Box />
-        <Card>
-          <Environmental />
-        </Card>
-        <Card paddingVertical={12}>
-          <DailyTemperature />
-        </Card>
-        <Card paddingVertical={12}>
-          <NextForecast />
-        </Card>
-      </Background>
+      {isLoading ? (
+        <LoadingRequest />
+      ) : (
+        <Background>
+          <Header onOpen={onOpen} />
+          <Box />
+          <Card>
+            <Environmental />
+          </Card>
+          <Card paddingVertical={12}>
+            <DailyTemperature />
+          </Card>
+          <Card paddingVertical={12}>
+            <NextForecast />
+          </Card>
+        </Background>
+      )}
       <ModalizeLocation modalizeRef={modalizeRef} />
     </>
   )

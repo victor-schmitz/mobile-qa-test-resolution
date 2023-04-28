@@ -22,6 +22,7 @@ export const useBackgroundController = (): IUseBackgroundController => {
   }, [condition])
 
   return {
-    animation
+    animation,
+    condition
   }
 }

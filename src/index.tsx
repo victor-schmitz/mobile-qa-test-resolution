@@ -5,6 +5,7 @@ import * as SplashScreen from 'expo-splash-screen'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { ThemeProvider } from 'styled-components'
 
+import { ModalPopup } from './components/ModalPopup/ModalPopup'
 import HomeScreen from './Screens/HomeScreem/HomeScreen'
 import theme from './theme'
 
@@ -43,6 +44,7 @@ export default function App(): ReactElement {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
+      <ModalPopup />
         <HomeScreen />
       </ThemeProvider>
     </GestureHandlerRootView>

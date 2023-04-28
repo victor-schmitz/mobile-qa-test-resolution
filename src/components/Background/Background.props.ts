@@ -6,4 +6,5 @@ export type ContainerProps = {
 
 export interface IUseBackgroundController {
   animation: MutableRefObject<null>
+  condition: string
 }

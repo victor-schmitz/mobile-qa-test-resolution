@@ -4,11 +4,12 @@ import * as Location from 'expo-location'
 import { Alert } from 'react-native'
 import { IHandles } from 'react-native-modalize/lib/options'
 
+import { IUseHomeController } from './HomeScreen.props'
 import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
-export const useHomeController = (): any => {
+export const useHomeController = (): IUseHomeController => {
   const modalizeRef = useRef<IHandles>(null)
-  const { getTimeAndTemperature } = useTimeAndTemperature()
+  const { getTimeAndTemperature, isLoading } = useTimeAndTemperature()
 
   const requestLocationPermission = async (): Promise<void> => {
     const { status } = await Location.requestForegroundPermissionsAsync()
@@ -37,6 +38,7 @@ export const useHomeController = (): any => {
 
   return {
     modalizeRef,
-    onOpen
+    onOpen,
+    isLoading
   }
 }
