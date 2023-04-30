@@ -1,6 +1,6 @@
+import { normalize } from '@utils/normalize'
 import styled from 'styled-components/native'
 
-import { normalize } from '../../utils/normalize'
 interface IProps {
   paddingVertical?: number
 }

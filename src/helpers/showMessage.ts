@@ -1,4 +1,4 @@
-import useErrorStore from '../store/error/error.store'
+import useErrorStore from '@store/error/error.store'
 
 export const showMessageError = (
   title: string,

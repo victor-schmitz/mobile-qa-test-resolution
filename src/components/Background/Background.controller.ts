@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react'
 
+import useTimeAndTemperature from '@store/timeAndTemperature/timeAndTemperature'
+
 import { IUseBackgroundController } from './Background.props'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 import theme from '../../theme'
 
 export const useBackgroundController = (): IUseBackgroundController => {

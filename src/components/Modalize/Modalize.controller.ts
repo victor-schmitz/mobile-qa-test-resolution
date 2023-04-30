@@ -1,7 +1,7 @@
+import useTimeAndTemperature from '@store/timeAndTemperature/timeAndTemperature'
 import { IHandles } from 'react-native-modalize/lib/options'
 
 import { IModalize } from './Modalize.props'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export const useModalize = (
   modalizeRef: React.RefObject<IHandles>

@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 
+import { Icon } from '@assets/icons/icon'
+import useTimeAndTemperature from '@store/timeAndTemperature/timeAndTemperature'
+import { normalize } from '@utils/normalize'
+
 import { IUseWeatherController } from './Weather.props'
 import { Animation, ContainerAnimation, ContentAnimationDay, ContentAnimationNight } from './Weather.styles'
-import { Icon } from '../../assets/icons/icon'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
-import { normalize } from '../../utils/normalize'
 
 export const useWeatherController = (): IUseWeatherController => {
   const { forecast, data } = useTimeAndTemperature()

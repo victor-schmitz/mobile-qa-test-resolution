@@ -1,8 +1,9 @@
 import * as React from 'react'
 
+import { Icon } from '@assets/icons/icon'
+
 import { useEnvironmentalController } from './Environmental.controller'
 import { Box, Container, Text } from './Environmental.styles'
-import { Icon } from '../../assets/icons/icon'
 
 export default function Environmental(): React.ReactElement {
   const { data } = useEnvironmentalController()

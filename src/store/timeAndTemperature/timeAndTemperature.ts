@@ -1,9 +1,9 @@
+import { triggerError } from '@helpers/triggerError'
+import { getTimeAndTemperatureRequest } from '@services/request/timeAndTemperature/timeAndTemperature.request'
 import { create } from 'zustand'
 
 import { FailedRequest } from './timeAndTemperature.message'
 import { useTimeAndTemperatureProps } from './timeAndTemperature.props'
-import { triggerError } from '../../helpers/triggerError'
-import { getTimeAndTemperatureRequest } from '../../services/request/timeAndTemperature/timeAndTemperature.request'
 
 const initialState = {
   isLoading: false,

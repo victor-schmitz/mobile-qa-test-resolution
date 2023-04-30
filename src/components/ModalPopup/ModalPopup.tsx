@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react'
 
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { normalize } from '@utils/normalize'
 import { Modal, Text } from 'react-native'
 
 import { useModalController } from './Modal.controller'
@@ -12,7 +13,6 @@ import {
   Content,
   ContainerText
 } from './ModalPopup.style'
-import { normalize } from '../../utils/normalize'
 
 export const ModalPopup = (): ReactElement => {
   const { hasError, buttonText, error, title, closeModal } = useModalController()

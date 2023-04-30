@@ -1,8 +1,8 @@
+import { normalize } from '@utils/normalize'
 import { StyleSheet } from 'react-native'
 import styled from 'styled-components/native'
 
 import theme from '../../theme'
-import { normalize } from '../../utils/normalize'
 
 export const style = StyleSheet.create({
   motiview: {
