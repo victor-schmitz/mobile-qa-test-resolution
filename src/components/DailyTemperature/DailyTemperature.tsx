@@ -18,7 +18,7 @@ export default function DailyTemperature(): React.ReactElement {
   const { setIcons, compareDate, forecast } = useDailyTemperature()
 
   return (
-    <Container>
+    <Container testID='dailyTemperature'>
       <ContainerTitleCard>
         <TodayText>Today</TodayText>
         <MonthText>{moment().format('MMMM, DD')}</MonthText>

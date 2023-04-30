@@ -7,7 +7,7 @@ import PickerLocation from '../Picker/PickerLocation'
 
 export default function Header ({ onOpen }: any): React.ReactElement {
   return (
-    <Container >
+    <Container testID="header">
         <PickerLocation onOpen={onOpen}/>
         <Icon icon="bell" width='27'/>
     </Container>
