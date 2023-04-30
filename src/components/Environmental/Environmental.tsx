@@ -8,7 +8,7 @@ import { Box, Container, Text } from './Environmental.styles'
 export default function Environmental(): React.ReactElement {
   const { data } = useEnvironmentalController()
   return (
-    <Container>
+    <Container testID='environmental'>
       <Box>
         <Icon icon="humidity" width="24" />
         <Text>{data.humidity}%</Text>

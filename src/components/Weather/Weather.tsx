@@ -12,7 +12,7 @@ export default function Weather(): React.ReactElement {
   const { forecast, verifyCondition } = useWeatherController()
 
   return (
-    <Container>
+    <Container testID="weather">
      {verifyCondition(forecast[0]?.condition)}
       <TemperatureText>{forecast[0]?.max}º</TemperatureText>
       <PrecipitationsText>Precipitations</PrecipitationsText>

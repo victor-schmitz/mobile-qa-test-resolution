@@ -6,7 +6,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { ThemeProvider } from 'styled-components'
 
 import { ModalPopup } from './components/ModalPopup/ModalPopup'
-import HomeScreen from './screen/HomeScreem/HomeScreen'
+import HomeScreen from './screen/HomeScreen/HomeScreen'
 import theme from './theme'
 
 export default function App(): ReactElement {

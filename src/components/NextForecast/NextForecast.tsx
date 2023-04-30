@@ -26,7 +26,7 @@ export default function NextForecast(): React.ReactElement {
   } = useNextForecastController()
 
   return (
-    <Container>
+    <Container testID='nextForecast'>
       <TitleNewForecast >
         <NextForecastText>Next Forecast</NextForecastText>
         <Icon icon="calendar" width="22" />

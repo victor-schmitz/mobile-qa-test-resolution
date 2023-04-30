@@ -8,16 +8,17 @@ import Header from '@components/Header/Header'
 import { LoadingRequest } from '@components/Loading/LoadingRequest'
 import { ModalizeLocation } from '@components/Modalize/Modalize'
 import NextForecast from '@components/NextForecast/NextForecast'
-import Weather from '@components/Weather/Weather'
 
 import { useHomeController } from './HomeScreen.controller'
+import Weather from '../../components/Weather/Weather'
 
 export default function HomeScreen(): ReactElement {
   const { modalizeRef, onOpen, data } = useHomeController()
   return (
     <>
-      <Background>
+      <Background >
         <Header onOpen={onOpen} />
+
         { data && data.forecast.length < 1 ? (
           <LoadingRequest />
         ) : (
