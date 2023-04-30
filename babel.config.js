@@ -1,8 +1,8 @@
-module.exports = function(api) {
-  api.cache(true);
+module.exports = function (api) {
+  api.cache(true)
   return {
     presets: ['babel-preset-expo'],
-    plugins : [[
+    plugins: [[
       'module:react-native-dotenv',
       {
         moduleName: 'react-native-dotenv',
@@ -12,6 +12,21 @@ module.exports = function(api) {
         safe: true,
         allowUndefined: true
       }
-    ]]
-  };
-};
+    ],
+    ['module-resolver', {
+      root: ['./src'],
+      alias: {
+        '@components': './src/components',
+        '@helpers': './src/helpers',
+        '@screen': './src/screen',
+        '@store': './src/store',
+        '@styles': './src/styles',
+        '@utils': './src/utils',
+        '@services': './src/services',
+        '@theme': './src/theme',
+        '@assets': './src/assets'
+      }
+    }]
+    ]
+  }
+}

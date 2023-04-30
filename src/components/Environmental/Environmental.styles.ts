@@ -1,6 +1,5 @@
+import { normalize } from '@utils/normalize'
 import styled from 'styled-components/native'
-
-import { normalize } from '../../utils/normalize'
 
 export const Container = styled.View`
   height: ${normalize(47)}px;

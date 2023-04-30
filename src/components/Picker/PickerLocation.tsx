@@ -1,8 +1,9 @@
 import * as React from 'react'
 
+import { Icon } from '@assets/icons/icon'
+
 import { IPickerLocation } from './PickerLocation.props'
 import { Container, TextLocation } from './PickerLocation.styles'
-import { Icon } from '../../assets/icons/icon'
 
 export default function PickerLocation({ onOpen }: IPickerLocation): React.ReactElement {
   return (

@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { Icon } from '@assets/icons/icon'
+
 import { useNextForecastController } from './NextForecast.controller'
 import {
   Container,
@@ -15,7 +17,6 @@ import {
   TextTemperatureMin,
   TitleNewForecast
 } from './NextForecast.styles'
-import { Icon } from '../../assets/icons/icon'
 
 export default function NextForecast(): React.ReactElement {
   const {

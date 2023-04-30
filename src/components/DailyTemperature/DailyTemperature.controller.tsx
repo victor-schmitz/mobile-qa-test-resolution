@@ -1,8 +1,9 @@
 import React from 'react'
 
+import { Icon } from '@assets/icons/icon'
+import useTimeAndTemperature from '@store/timeAndTemperature/timeAndTemperature'
+
 import { IUserDailyTemperature } from './DailyTemperature.props'
-import { Icon } from '../../assets/icons/icon'
-import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTemperature'
 
 export const useDailyTemperature = (): IUserDailyTemperature => {
   const { forecast, date, data } = useTimeAndTemperature()

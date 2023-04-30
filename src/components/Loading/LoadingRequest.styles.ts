@@ -1,8 +1,7 @@
+import { normalize } from '@utils/normalize'
 import AnimatedLottieView from 'lottie-react-native'
 import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
-
-import { normalize } from '../../utils/normalize'
 
 const { height } = Dimensions.get('window')
 

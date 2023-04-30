@@ -1,8 +1,7 @@
+import { normalize } from '@utils/normalize'
 import { LinearGradient } from 'expo-linear-gradient'
 import LottieView from 'lottie-react-native'
 import styled from 'styled-components/native'
-
-import { normalize } from '../../utils/normalize'
 
 export const Container = styled(LinearGradient)`
   flex: 1;
