@@ -54,6 +54,7 @@ Below, you can find videos demonstrating the use of the app in different scenari
 - Husky: a tool for adding git hooks to your project
 - Commitlint: a tool for enforcing commit message conventions
 - ESLint: a tool for enforcing JavaScript code style and identifying issues
+- Jest: a popular JavaScript testing library for React applications.
 
 **Back-end:** Api hgbrasil
 
