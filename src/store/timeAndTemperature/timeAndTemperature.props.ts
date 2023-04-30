@@ -4,6 +4,7 @@ export type useTimeAndTemperatureProps = {
   forecast: IForecast[]
   date: string
   condition: string
+  clearData: () => void
   getTimeAndTemperature: ({ coords, city }: {
     coords?: ICoord
     city?: string
