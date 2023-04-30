@@ -12,7 +12,7 @@ export default function Background({
 }: ContainerProps): React.ReactElement {
   const { animation, condition } = useBackgroundController()
   return (
-    <Container colors={theme.COLORS.CONDITION}>
+    <Container colors={theme.COLORS.CONDITION} testID='background'>
       <SafeAreaView >
         <ScrollView showsVerticalScrollIndicator={false}>
           <ContainerAnimation >

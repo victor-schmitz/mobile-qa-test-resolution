@@ -7,7 +7,7 @@ export const LoadingRequest = (): ReactElement => {
   const { animation } = useLoadingRequestController()
 
   return (
-    <Container>
+    <Container testID='loading'>
       <Animation
         autoPlay
         ref={animation}
