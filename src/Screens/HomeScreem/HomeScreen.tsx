@@ -12,13 +12,12 @@ import NextForecast from '../../components/NextForecast/NextForecast'
 import Weather from '../../components/Weather/Weather'
 
 export default function HomeScreen(): ReactElement {
-  const { modalizeRef, onOpen, isLoading } = useHomeController()
-
+  const { modalizeRef, onOpen, data } = useHomeController()
   return (
     <>
       <Background>
         <Header onOpen={onOpen} />
-        {isLoading ? (
+        { data && data.forecast.length < 1 ? (
           <LoadingRequest />
         ) : (
           <>

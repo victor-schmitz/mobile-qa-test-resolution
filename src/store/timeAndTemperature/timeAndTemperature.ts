@@ -51,6 +51,10 @@ const useTimeAndTemperature = create<useTimeAndTemperatureProps>(
       void makeAsync({ handle, onError })
     },
 
+    clearData () {
+      set(initialState)
+    },
+
     makeAsync: async ({ handle, onError, onFinally }) => {
       try {
         await handle()

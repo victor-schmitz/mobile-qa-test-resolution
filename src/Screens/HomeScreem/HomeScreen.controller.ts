@@ -9,7 +9,7 @@ import useTimeAndTemperature from '../../store/timeAndTemperature/timeAndTempera
 
 export const useHomeController = (): IUseHomeController => {
   const modalizeRef = useRef<IHandles>(null)
-  const { getTimeAndTemperature, isLoading } = useTimeAndTemperature()
+  const { getTimeAndTemperature, data } = useTimeAndTemperature()
 
   const requestLocationPermission = async (): Promise<void> => {
     const { status } = await Location.requestForegroundPermissionsAsync()
@@ -39,6 +39,6 @@ export const useHomeController = (): IUseHomeController => {
   return {
     modalizeRef,
     onOpen,
-    isLoading
+    data
   }
 }
