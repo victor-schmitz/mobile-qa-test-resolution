@@ -1,3 +1,9 @@
+ 
+
+![Logo](https://www.cieb.net.br/evidencias/images/logos/nees.png)
+ 
+
+
 # Mobile Weather App - Nees
 
 The application developed as part of the mobile developer selection process is a weather forecast solution developed in React-Native. It uses data from a weather forecast API to display accurate and up-to-date information such as temperature, humidity, wind speed, and other relevant information for the user's current location. The aim is to provide an intuitive and user-friendly experience, with a clear and organized display of the weather information.
