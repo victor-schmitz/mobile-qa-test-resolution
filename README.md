@@ -35,6 +35,11 @@ Below, you can find videos demonstrating the use of the app in different scenari
   </tr>
 </table>
 
+## Download
+- APK : 
+
+[![portfolio](https://img.shields.io/badge/download-gree?style=for-the-badge&logo=android&logoColor=white)](https://drive.google.com/file/d/11dmCL6RduwR9k04LSV34dgOqZA4c2nQt/view?usp=sharing)
+ 
 ## Functionalities
 
 - Weather forecast: display current temperature, weather conditions, chance of rain, air humidity, wind speed, and other information.
