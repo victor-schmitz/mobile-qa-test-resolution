@@ -1,18 +1,14 @@
- 
+# Processo seletivo para QA Test
 
-![Logo](https://www.cieb.net.br/evidencias/images/logos/nees.png)
- 
+Olá 👋 e bem vindo!
 
+Este repositório contém o código de um aplicativo móvel que foi utilizado para o teste de desenvolvedor móvel. Neste caso, vamos utlizar como código base a submissão de [@ermessonlima](https://github.com/ermessonlima). O teste foi baseado neste [repo](https://github.com/mhadaniya/mobile-weather-app), mas o código é baseado neste [repo](https://github.com/ermessonlima/mobile-weather-app).
 
-# Mobile Weather App - Nees
+## Apresentação do aplicativo
 
-The application developed as part of the mobile developer selection process is a weather forecast solution developed in React-Native. It uses data from a weather forecast API to display accurate and up-to-date information such as temperature, humidity, wind speed, and other relevant information for the user's current location. The aim is to provide an intuitive and user-friendly experience, with a clear and organized display of the weather information.
+De maneira resumida, é um aplicativo com previsão de tempo de cidades. Ele consome uma API externa, e tem algumas regrinhas para renderização na tela.
 
-
-
-## Demonstration
-
-Below, you can find videos demonstrating the use of the app in different scenarios, including during the day and at night, in both rainy and non-rainy conditions, on both iOS and Android versions. The videos provide a clear demonstration of the app's functionality in various scenarios. Check them out!
+Abaixo, alguns vídeos demonstrando o funcionamento da aplicação:
 
 <table>
   <tr>
@@ -27,165 +23,89 @@ Below, you can find videos demonstrating the use of the app in different scenari
         <td>
       <p>Daytime - ANDROID</p>
             <video src="https://user-images.githubusercontent.com/59540379/235074744-271351fc-20b0-4998-bae5-2927c8664785.webm" width="400" height="300" controls></video>
-    </td> 
+    </td>
        <td>
       <p>Nighttime - ANDROID</p>
        <video src="https://user-images.githubusercontent.com/59540379/235074172-60807b7c-8e8e-44aa-8d99-721dce1159f0.webm" width="400" height="300" controls></video>
-    </td> 
+    </td>
   </tr>
 </table>
 
-## Download
-- APK : 
+### Funcionalidades
 
-[![portfolio](https://img.shields.io/badge/download-gree?style=for-the-badge&logo=android&logoColor=white)](https://drive.google.com/file/d/11dmCL6RduwR9k04LSV34dgOqZA4c2nQt/view?usp=sharing)
- 
-## Functionalities
+- Previsão do tempo: exibir temperatura atual, condições climáticas, chance de chuva, umidade do ar, velocidade do vento e outras informações.
+- Seleção de cidade: permitir que os usuários pesquisem e escolham a cidade de sua preferência para visualizar a previsão do tempo.
+- Animações meteorológicas: utilizar animações para representar visualmente as condições climáticas em tempo real, incluindo mudanças com base no horário do dia (como transições de dia para noite).
+- Previsão estendida do tempo: fornecer previsões de longo prazo para os próximos dias, com informações sobre temperaturas máximas e mínimas e chance de chuva.
 
-- Weather forecast: display current temperature, weather conditions, chance of rain, air humidity, wind speed, and other information.
-- City selection: allow users to search and select the city of their choice to view the weather forecast.
-- Weather animations: use animations to visually represent real-time weather conditions, including changes based on the time of day (such as transitions from day to night).
-- Extended weather forecast: provide long-term forecasts for the next few days, with information on maximum and minimum temperatures and chance of rain.
+### Tech stack
 
+Algumas libs utilizadas neste projeto: React Native, Expo, Axios, Moment, Styled Components, Zustand, Lottie React Native, React Native SVG, React Native Gesture Handler, React Native Async Storage, React Native Location, Husky, Commitlint, ESLint, Jest.
 
-## Stack used
+A API no backend utilizado foi: Api hgbrasil
 
-**Front-end:** 
-- React Native: a framework for building mobile apps using React
-- Expo: a set of tools and services for building and deploying React Native apps
-- Axios: a popular library for making HTTP requests
-- Moment: a library for parsing, validating, manipulating, and displaying dates and times
-- Styled Components: a library for styling React components using CSS
-- Zustand: a lightweight state management library for React
-- Lottie React Native: a library for adding animations to React Native apps
-- React Native SVG: a library for rendering SVG images in React Native
-- React Native Gesture Handler: a library for handling touch gestures in React Native apps
-- React Native Async Storage: a library for persisting data in React Native apps
-- React Native Location: a library for getting the user's location in React Native apps
-- Husky: a tool for adding git hooks to your project
-- Commitlint: a tool for enforcing commit message conventions
-- ESLint: a tool for enforcing JavaScript code style and identifying issues
-- Jest: a popular JavaScript testing library for React applications.
+### Requirementos
 
-**Back-end:** Api hgbrasil
+- Node.js
+- Yarn (ou NPM)
+- Expo CLI
 
-## Requirements
+### Como executar o projeto
 
-Node.js
+Para executar este projeto, você precisa seguir estas etapas:
 
-Yarn (ou NPM)
+1. Instale o Node.js em seu computador a partir do site oficial: https://nodejs.org/
 
-Expo CLI
-  
-  
-  
-## How to run the project
-To run this project, you need to follow these steps:
-
-Install Node.js on your computer from the official website: https://nodejs.org/
-
-Install the Yarn package manager (you can also use NPM, which comes with Node.js, if you prefer) by running the following command:
+2. Instale o gerenciador de pacotes Yarn (você também pode usar o NPM, que vem com o Node.js, se preferir) executando o seguinte comando:
 
 ```bash
-  npm install --global yarn 
+npm install --global yarn
 ```
-Install the Expo CLI globally using Yarn (or NPM):
+
+3. Instale o Expo CLI globalmente usando o Yarn (ou NPM):
+
 ```bash
-   yarn global add expo-cli
+yarn global add expo-cli
 ```
-Clone this repository to your computer:
+
+4. Clone este repositório para o seu computador:
+
 ```bash
-   git clone https://github.com/ermessonlima/mobile-weather-app.git
+git clone https://github.com/ermessonlima/mobile-weather-app.git
 ```
-Navigate to the cloned project folder and install the dependencies:
+
+5. Navegue até a pasta do projeto clonado e instale as dependências:
+
 ```bash
-   cd mobile-weather-app
-   yarn install
+cd mobile-weather-app
+yarn install
 ```
-Start the Expo development server:
+
+6. Inicie o servidor de desenvolvimento do Expo:
+
 ```bash
-   npx expo start
+npx expo start
 ```
-Expo will display a QR code. To view the app on your mobile device, install the Expo Go app, which is available on the App Store (iOS) or the Google Play Store (Android). Once you have installed the app, open it and scan the QR code using your phone's camera or the scanning function within the Expo Go app. This will launch the app on your mobile device, allowing you to view and test its features.
- 
+
+7. O Expo exibirá um código QR. Para visualizar o aplicativo em seu dispositivo móvel, instale o aplicativo Expo Go, disponível na App Store (iOS) ou no Google Play Store (Android). Depois de instalá-lo, abra o aplicativo e escaneie o código QR usando a câmera do seu telefone ou a função de escaneamento dentro do aplicativo Expo Go. Isso iniciará o aplicativo em seu dispositivo móvel, permitindo que você visualize e teste suas funcionalidades.
 
 
-
-## Support
-- For support, please send an email to ermessonlimadossantos@gmail.com or contact us via phone/WhatsApp at: +55 82991209850.
-
-## Environment Variables
-To run this project, you will need to add the following environment variables to your .env file.
+Não esqueça de configurar a variável de ambiente para executar o projeto. Você precisa criar um arquivo `.env`, e este arquivo deve conter:
 
 `REACT_APP_BASE_URL:https://api.hgbrasil.com/weather?key={my_key}`
 
-Please provide your key via email or phone.
 
-## Color Documentation
+## Instruções para o teste
 
-| Name        | Hexadecimal                                                |
-| ----------- | ----------------------------------------------------------- |
-| WHITE       | ![#FFFFFF](https://via.placeholder.com/10/FFFFFF?text=+) #FFFFFF |
-| BLACK       | ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
-| GREY        | ![#7F7F7F](https://via.placeholder.com/10/7F7F7F?text=+) rgba(255,255,255,0.5) |
-| CONDITION   | ![#29B2DD](https://via.placeholder.com/10/29B2DD?text=+) #29B2DD, ![#33AADD](https://via.placeholder.com/10/33AADD?text=+) #33AADD, ![#2DC8EA](https://via.placeholder.com/10/2DC8EA?text=+) #2DC8EA |
-| DAY_RAIN    | ![#08244F](https://via.placeholder.com/10/08244F?text=+) #08244F, ![#134CB5](https://via.placeholder.com/10/134CB5?text=+) #134CB5, ![#0B42AB](https://via.placeholder.com/10/0B42AB?text=+) #0B42AB |
-| NIGHT_RAIN  | ![#00033F](https://via.placeholder.com/10/00033F?text=+) #00033F, ![#000443](https://via.placeholder.com/10/000443?text=+) #000443, ![#000000](https://via.placeholder.com/10/000000?text=+) #000000 |
-| NIGHT_CLEAN | ![#44444F](https://via.placeholder.com/10/44444F?text=+) #44444F, ![#888888](https://via.placeholder.com/10/888888?text=+) #888888, ![#444444](https://via.placeholder.com/10/444444?text=+) #444444 |
+Primeiro, tente executar o aplicativo e se familiarize com o código e o ambiente. Após isto, execute os testes. Você verá que neste repositório, já temos alguns testes de componentes, utlizando [`Jest`](https://jestjs.io/pt-BR/).
 
+Para o teste, queremos que você aplique seus conhecimentos e melhore os testes existentes utilizando [`storybook`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/). E adicione outros testes.
 
- 
+- [ ] Instalar storybook no projeto
+- [ ] Fazer teste de 5 componentes
+- [ ] Atualizar o README com instruções de instalação e execução dos testes
+- [ ] Fazer teste de tela (bônus)
 
-## Font Documentation
+Ficamos no aguardo do seu envio!
 
-| Nome                 | Valor                     |
-| -------------------- | ------------------------- |
-| REGULAR_SF           | SF-Pro-Display-Regular    |
-| MEDIUM_ALEGREYASANS  | AlegreyaSans-Medium       |
-| SEMIBOLD_SF          | SF-Pro-Display-Semibold   |
-| BOLD_ALEGREYASANS     | AlegreyaSans-Bold         |
-| BOLD_SF              | SF-Pro-Display-Bold       |
-
-## Font Weight Documentation
-
-| Nome        | Valor  |
-| ----------- | ------ |
-| REGULAR_SF  | 400    |
-| MEDIUM      | 500    |
-| SEMIBOLD_SF | 600    |
-| BOLD_SF     | bold   |
-
-## Font Size Documentation
-
-| Nome | Valor |
-| ---- | ----- |
-| P    | 10    |
-| MD   | 14    |
-| LG   | 18    |
-| XL   | 20    |
-| XXL  | 64    |
-
-## Spacing Documentation
-
-| Nome | Valor |
-| ---- | ----- |
-| P    | 5     |
-| PM   | 10    |
-| M    | 12    |
-| MD   | 20    |
-| LM   | 30    |
-| LG   | 38    |
-| XL   | 40    |
-
-## Rounded Border Documentation
-
-| Nome | Valor |
-| ---- | ----- |
-| LG   | 20    |
-
-
-## Developer
-
-- [@ermessonlima](https://github.com/ermessonlima)
- 
-
+Se divirta no processo e boa sorte! 🍀
