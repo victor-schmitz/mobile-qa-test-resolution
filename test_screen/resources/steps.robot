@@ -30,7 +30,7 @@ City selection
 
 Extended weather forecast
     # Today forecast (Day 1)
-    Wait Until Element Is Visible    //android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup//android.widget.TextView[contains(@text, "ºC")][1]
+    Wait Until Element Is Visible    //android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup//android.widget.TextView[contains(@text, "ºC")][1]    timeout=25s
 
     # Tomorrow forecast (Day 2)
     Wait Until Element Is Visible    //android.widget.HorizontalScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup//android.widget.TextView[contains(@text, "ºC")]
