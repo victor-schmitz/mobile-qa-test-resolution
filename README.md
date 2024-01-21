@@ -1,7 +1,5 @@
 # Processo seletivo para QA Test
 
-Olá 👋 e bem vindo!
-
 Este repositório contém o código de um aplicativo móvel que foi utilizado para o teste de desenvolvedor móvel. Neste caso, vamos utlizar como código base a submissão de [@ermessonlima](https://github.com/ermessonlima). O teste foi baseado neste [repo](https://github.com/mhadaniya/mobile-weather-app), mas o código é baseado neste [repo](https://github.com/ermessonlima/mobile-weather-app).
 
 ## Apresentação do aplicativo
@@ -71,14 +69,14 @@ yarn global add expo-cli
 4. Clone este repositório para o seu computador:
 
 ```bash
-git clone https://github.com/ermessonlima/mobile-weather-app.git
+git clone https://github.com/victor-schmitz/mobile-qa-test-resolution_1.git
 ```
 
 5. Navegue até a pasta do projeto clonado e instale as dependências:
 
 ```bash
-cd mobile-weather-app
-yarn install
+cd mobile-qa-test-resolution_1/
+yarn install --force
 ```
 
 6. Inicie o servidor de desenvolvimento do Expo:
@@ -94,18 +92,63 @@ Não esqueça de configurar a variável de ambiente para executar o projeto. Voc
 
 `REACT_APP_BASE_URL:https://api.hgbrasil.com/weather?key={my_key}`
 
+Se por ventura mesmo criando o arquivo `.env` e adicionando a linha acima e a API ainda não funcionar, você deve fazer o seguinte:
 
-## Instruções para o teste
+no arquivo `.env` colar:
 
-Primeiro, tente executar o aplicativo e se familiarize com o código e o ambiente. Após isto, execute os testes. Você verá que neste repositório, já temos alguns testes de componentes, utlizando [`Jest`](https://jestjs.io/pt-BR/).
+`REACT_APP_BASE_URL=https://api.hgbrasil.com/weather?key={my_key}`
 
-Para o teste, queremos que você aplique seus conhecimentos e melhore os testes existentes utilizando [`storybook`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/). E adicione outros testes.
+e no arquivo `src\services\api.ts` substiruir:
+
+`export const instance = createInstance(process.env.REACT_APP_BASE_URL ?? '')`
+
+por:
+
+`export const instance = createInstance('https://api.hgbrasil.com/weather?key={my_key}&format=json' ?? '')`
+
+
+## Resolução do teste
+
+## Teste de tela
+- [x] Fazer teste de tela (bônus)
+
+Nessa etapa, foram utilizados Android Studio, Appium e Robot Framework para realizar os testes automatizados das telas.
+
+Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para executar o projeto, que foram ditas acima, e logo em seguida seguir estas etapas:
+
+1. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
+): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
+
+2. Instale o Android Studio: https://developer.android.com/studio?hl=pt-br
+
+3. Instale o Robot Framework:
+
+`pip install robotframework`
+
+4. Abra o Android Studio e crie um novo projeto
+
+5. Depois, quando o projeto carregar, clique em Device Manager e dê Start no dispositivo pré criado pelo Android Studio.
+
+6. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
+
+7. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
+
+`    ...                 udid={MY_DEVICE}`
+
+Digite `adb devices` no cmd e substitua o seu dispositivo pelo `{MY_DEVICE}`
+
+Exemplo: ``
+
+8. Com tudo pronto, entre na pasta `cd test_screen`
+
+9. Digite o seguite comando para executar os testes:
+
+`robot -d ./logs suite.robot`
+
+10. Assim, os testes serão executados e documentados na pasta `test_screen\resources`
+
+Ficamos no aguardo do seu envio!
 
 - [ ] Instalar storybook no projeto
 - [ ] Fazer teste de 5 componentes
 - [ ] Atualizar o README com instruções de instalação e execução dos testes
-- [ ] Fazer teste de tela (bônus)
-
-Ficamos no aguardo do seu envio!
-
-Se divirta no processo e boa sorte! 🍀
