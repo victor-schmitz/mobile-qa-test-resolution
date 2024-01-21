@@ -123,7 +123,9 @@ Para fazer os testes da tela, você precisa primeiramente ter instalado as ferra
 
 3. Instale o Robot Framework:
 
-`pip install robotframework`
+```bash
+pip install robotframework
+```
 
 4. Abra o Android Studio e crie um novo projeto
 
@@ -143,12 +145,34 @@ Exemplo: `...                 udid=emulator-5544`
 
 9. Digite o seguite comando para executar os testes:
 
-`robot -d ./logs suite.robot`
+```bash
+robot -d ./logs suite.robot
+```
 
 10. Assim, os testes serão executados e documentados na pasta `test_screen\resources`
 
-Ficamos no aguardo do seu envio!
+11. Além disso, dentro da pasta `test_screen\testes_manuais`, deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
 
-- [ ] Instalar storybook no projeto
-- [ ] Fazer teste de 5 componentes
-- [ ] Atualizar o README com instruções de instalação e execução dos testes
+
+## Teste de Componentes
+
+- [x] Fazer teste de 5 componentes
+
+Foram realizados teste de mais 5 componentes, sendo 4 deles usando Jest, que para testa-los, você deve executar o seguite comando:
+
+```bash
+npm test
+```
+
+O 5° componente foi testado com o Robotframework, sendo o componente de botão de troca de cidade. Para testa-lo, você deve, depois de ter configurado o Robot Framework como ensinado acima, executar o seguinte comando (na pasta `cd test_screen`):
+
+```bash
+robot -d ./logs suite.robot
+```
+
+
+## Instalar storybook no projeto
+- [x] Instalar storybook no projeto
+
+## Atualizar o README
+- [x] README atualizado com instruções de instalação e execução dos testes
