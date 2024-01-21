@@ -92,7 +92,7 @@ Não esqueça de configurar a variável de ambiente para executar o projeto. Voc
 
 `REACT_APP_BASE_URL:https://api.hgbrasil.com/weather?key={my_key}`
 
-Se por ventura mesmo criando o arquivo `.env` e adicionando a linha acima e a API ainda não funcionar, você deve fazer o seguinte:
+Se por ventura mesmo criando o arquivo `.env` e adicionando a linha acima, a API ainda não funcionar, você deve fazer o seguinte:
 
 no arquivo `.env` colar:
 
@@ -133,11 +133,11 @@ Para fazer os testes da tela, você precisa primeiramente ter instalado as ferra
 
 7. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
 
-`    ...                 udid={MY_DEVICE}`
+`...                 udid={MY_DEVICE}`
 
 Digite `adb devices` no cmd e substitua o seu dispositivo pelo `{MY_DEVICE}`
 
-Exemplo: ``
+Exemplo: `...                 udid=emulator-5544`
 
 8. Com tudo pronto, entre na pasta `cd test_screen`
 
