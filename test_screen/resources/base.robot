@@ -10,7 +10,7 @@ Open App
     ...                 platformName=Android
     ...                 deviceName=Test
     ...                 app=${EXECDIR}/../app/mobile-weather.apk
-    ...                 udid=RQCW603TD9H
+    ...                 udid={MY_DEVICE}
     ...                 autoGrantPermissions=true  
 
     # Checkpoint to ensure we are in the right place
