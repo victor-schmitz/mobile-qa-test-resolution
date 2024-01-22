@@ -113,33 +113,48 @@ por:
 ### Teste de tela
 - [x] Fazer teste de tela (bônus)
 
-Nessa etapa, foram utilizados [Python](https://www.python.org/), [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
+Nessa etapa, foram utilizados [Java JDK8](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html), [Node.js](https://nodejs.org/en/), [Python](https://www.python.org/), [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
 
 Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para [executar o Projeto](#como-executar-o-projeto), e logo em seguida seguir estas etapas:
 
 1. Instale Python, você pode seguir esse tutorial: https://www.youtube.com/watch?v=0pG4NrucQR4
 
-2. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
-): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
+
+2. Intale o JDK 8 através [desse link](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html)
 
 3. Instale o Android Studio: https://developer.android.com/studio?hl=pt-br
 
-4. Instale o Robot Framework:
+4. No cmd execute:
+```bash
+npm install -g appium
+npm install -g appium-doctor
+```
+- Em seguida, execute:
+
+```bash
+appium-doctor --android
+```
+
+5. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
+): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
+
+6. Instale o Robot Framework:
 
 ```bash
 pip install robotframework
+pip install robotframework-appiumlibrary
 ```
 
-4. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
+7. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
 * Para isso, você pode seguir esse tutorial: https://www.youtube.com/watch?v=YMSj4g5yEzs
 * No vídeo, é dito para colocar na PATH das variáveis do sistema tanto uma pasta chamada `platform-tools`, quanto `tools`. Se por ventura você não encontrar a pasta `tools`, adicione a pasta `emulator` em vez dela.
 * Se o `adb devices` ainda não for reconhecido, sugiro que você não coloque o caminho encurtado (como `%ANDROID_HOME%\platform-tools`) na PATH das variáveis de sistema, e sim coloca-lo por extenso, como por exemplo: `C:\Users\usuario\AppData\Local\Android\Sdk\emulator`
 
-5. Abra o Android Studio e crie um novo projeto.
+8. Abra o Android Studio e crie um novo projeto.
 
-6. Depois, quando o projeto carregar, clique em Device Manager e dê Start no dispositivo pré criado pelo Android Studio.
+9. Depois, quando o projeto carregar, clique em Device Manager e dê Start no dispositivo pré criado pelo Android Studio.
 
-7. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
+10. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
 
     `...                 udid={MY_DEVICE}`
 
@@ -148,24 +163,24 @@ pip install robotframework
     Exemplo: 
     `...                 udid=emulator-5544`
 
-8. Abra o Appium server GUI e inicie um servidor
+11. Abra o Appium server GUI e inicie um servidor
 
-9. Com tudo pronto, entre na pasta `test_screen`
+12. Com tudo pronto, entre na pasta `test_screen`
 
 ```bash
 cd test_screen
 ```
    
 
-10. Digite o seguite comando para executar os testes:
+13. Digite o seguite comando para executar os testes:
 
 ```bash
 robot -d ./logs suite.robot
 ```
 
-10. Assim, os testes serão executados e documentados na pasta `test_screen\resources`
+14. Assim, os testes serão executados e documentados na pasta `test_screen\logs`
 
-11. Além disso, nesse [link do google planilhas](https://docs.google.com/spreadsheets/d/1MpSpvWoOmYTfgf7QZ9qzGrxpZqkv3-TKbHkBmfqKRps/edit?usp=sharing) , deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
+15. Além disso, nesse [link do google planilhas](https://docs.google.com/spreadsheets/d/1MpSpvWoOmYTfgf7QZ9qzGrxpZqkv3-TKbHkBmfqKRps/edit?usp=sharing) , deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
 
 
 ## Teste de Componentes
