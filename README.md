@@ -133,6 +133,7 @@ pip install robotframework
 4. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
 * Para isso, você pode seguir esse tutorial: https://www.youtube.com/watch?v=YMSj4g5yEzs
 * No vídeo, é dito para colocar na PATH das variáveis do sistema tanto uma pasta chamada `platform-tools`, quanto `tools`. Se por ventura você não encontrar a pasta `tools`, adicione a pasta `emulator` em vez dela.
+* Se o `adb devices` ainda não for reconhecido, sugiro que você não coloque o caminho encurtado (como `%ANDROID_HOME%\platform-tools`) na PATH das variáveis de sistema, e sim coloca-lo por extenso, como por exemplo: `C:\Users\usuario\AppData\Local\Android\Sdk\emulator`
 
 5. Abra o Android Studio e crie um novo projeto.
 
