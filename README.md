@@ -162,7 +162,7 @@ robot -d ./logs suite.robot
 
 10. Assim, os testes serão executados e documentados na pasta `test_screen\resources`
 
-11. Além disso, dentro da pasta `test_screen\manual_tests`, deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
+11. Além disso, nesse [link do google planilhas](https://docs.google.com/spreadsheets/d/1MpSpvWoOmYTfgf7QZ9qzGrxpZqkv3-TKbHkBmfqKRps/edit?usp=sharing) , deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
 
 
 ## Teste de Componentes
