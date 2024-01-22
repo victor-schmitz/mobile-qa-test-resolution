@@ -115,14 +115,16 @@ por:
 
 Nessa etapa, foram utilizados [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
 
-Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para [executar o Projeto](exec-proj), e logo em seguida seguir estas etapas:
+Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para [executar o Projeto](#como-executar-o-projeto), e logo em seguida seguir estas etapas:
 
-1. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
+1. Instale Python, você pode seguir esse tutorial: https://www.youtube.com/watch?v=0pG4NrucQR4
+
+2. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
 ): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
 
-2. Instale o Android Studio: https://developer.android.com/studio?hl=pt-br
+3. Instale o Android Studio: https://developer.android.com/studio?hl=pt-br
 
-3. Instale o Robot Framework:
+4. Instale o Robot Framework:
 
 ```bash
 pip install robotframework
@@ -138,12 +140,12 @@ pip install robotframework
 
 7. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
 
-`...                 udid={MY_DEVICE}`
+    `...                 udid={MY_DEVICE}`
 
-Digite `adb devices` no cmd e substitua o seu dispositivo pelo `{MY_DEVICE}`
+    Digite `adb devices` no cmd e substitua o seu dispositivo pelo `{MY_DEVICE}`
 
-Exemplo: 
-`...                 udid=emulator-5544`
+    Exemplo: 
+    `...                 udid=emulator-5544`
 
 8. Com tudo pronto, entre na pasta `test_screen`
 
