@@ -148,7 +148,9 @@ pip install robotframework
     Exemplo: 
     `...                 udid=emulator-5544`
 
-8. Com tudo pronto, entre na pasta `test_screen`
+8. Abra o Appium server GUI e inicie um servidor
+
+9. Com tudo pronto, entre na pasta `test_screen`
 
 ```bash
 cd test_screen
