@@ -48,7 +48,7 @@ A API no backend utilizado foi: Api hgbrasil
 - Yarn (ou NPM)
 - Expo CLI
 
-### Como executar o projeto
+### <a name="exec-proj"></a>Como executar o projeto
 
 Para executar este projeto, você precisa seguir estas etapas:
 
@@ -92,13 +92,13 @@ Não esqueça de configurar a variável de ambiente para executar o projeto. Voc
 
 `REACT_APP_BASE_URL:https://api.hgbrasil.com/weather?key={my_key}`
 
-Se por ventura mesmo criando o arquivo `.env` e adicionando a linha acima, a API ainda não funcionar, você deve fazer o seguinte:
+Se por ventura, mesmo criando o arquivo `.env` e adicionando a linha acima, a API ainda não funcionar, você deve fazer o seguinte:
 
-no arquivo `.env` colar:
+no arquivo `.env` colar apenas essa linha:
 
 `REACT_APP_BASE_URL=https://api.hgbrasil.com/weather?key={my_key}`
 
-e no arquivo `src\services\api.ts` substiruir:
+e no arquivo `src\services\api.ts` substituir:
 
 `export const instance = createInstance(process.env.REACT_APP_BASE_URL ?? '')`
 
@@ -107,14 +107,15 @@ por:
 `export const instance = createInstance('https://api.hgbrasil.com/weather?key={my_key}&format=json' ?? '')`
 
 
-## Resolução do teste
+# Resolução do teste
 
-## Teste de tela
+
+### Teste de tela
 - [x] Fazer teste de tela (bônus)
 
-Nessa etapa, foram utilizados Android Studio, Appium e Robot Framework para realizar os testes automatizados das telas.
+Nessa etapa, foram utilizados [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
 
-Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para executar o projeto, que foram ditas acima, e logo em seguida seguir estas etapas:
+Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para [executar o Projeto](exec-proj), e logo em seguida seguir estas etapas:
 
 1. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
 ): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
@@ -127,11 +128,13 @@ Para fazer os testes da tela, você precisa primeiramente ter instalado as ferra
 pip install robotframework
 ```
 
-4. Abra o Android Studio e crie um novo projeto
+4. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
+* Para isso, você pode seguir esse tutorial: https://www.youtube.com/watch?v=YMSj4g5yEzs
+* No vídeo, é dito para colocar na PATH das variáveis do sistema tanto uma pasta chamada `platform-tools`, quanto `tools`. Se por ventura você não encontrar a pasta `tools`, adicione a pasta `emulator` em vez dela.
 
-5. Depois, quando o projeto carregar, clique em Device Manager e dê Start no dispositivo pré criado pelo Android Studio.
+5. Abra o Android Studio e crie um novo projeto.
 
-6. O Android SDK (para executar comandos adb) é baixado pelo Android Studio, mas você precisa de adiciona-lo nas variáveis de ambiente.
+6. Depois, quando o projeto carregar, clique em Device Manager e dê Start no dispositivo pré criado pelo Android Studio.
 
 7. No arquivo `test_screen\resources\base.robot`, você deve alterar a seguinte linha:
 
@@ -139,11 +142,17 @@ pip install robotframework
 
 Digite `adb devices` no cmd e substitua o seu dispositivo pelo `{MY_DEVICE}`
 
-Exemplo: `...                 udid=emulator-5544`
+Exemplo: 
+`...                 udid=emulator-5544`
 
-8. Com tudo pronto, entre na pasta `cd test_screen`
+8. Com tudo pronto, entre na pasta `test_screen`
 
-9. Digite o seguite comando para executar os testes:
+```bash
+cd test_screen
+```
+   
+
+10. Digite o seguite comando para executar os testes:
 
 ```bash
 robot -d ./logs suite.robot
@@ -151,28 +160,25 @@ robot -d ./logs suite.robot
 
 10. Assim, os testes serão executados e documentados na pasta `test_screen\resources`
 
-11. Além disso, dentro da pasta `test_screen\testes_manuais`, deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
+11. Além disso, dentro da pasta `test_screen\manual_tests`, deixei os mesmos testes que foram realizados usando Robotframework, só que feitos manualmente.
 
 
 ## Teste de Componentes
-
 - [x] Fazer teste de 5 componentes
 
-Foram realizados teste de mais 5 componentes, sendo 4 deles usando Jest, que para testa-los, você deve executar o seguite comando:
+Foram realizados teste de mais 5 componentes, sendo 4 deles usando Jest, que para testa-los, você deve executar o seguinte comando na pasta raiz do projeto:
 
 ```bash
 npm test
 ```
 
-O 5° componente foi testado com o Robotframework, sendo o componente de botão de troca de cidade. Para testa-lo, você deve, depois de ter configurado o Robot Framework como ensinado acima, executar o seguinte comando (na pasta `cd test_screen`):
+O 5° componente foi testado com o Robotframework, sendo o componente de botão de troca de cidade. Para testa-lo, você deve, depois de ter [configurado o Robot Framework], deve navegar até a pasta `test_screen` e executar o teste:
 
 ```bash
-robot -d ./logs suite.robot
+cd test_screen
+robot -d ./logs -t "Check City Selection with Weather Forecast" suite.robot
 ```
 
-
-## Instalar storybook no projeto
-- [x] Instalar storybook no projeto
 
 ## Atualizar o README
 - [x] README atualizado com instruções de instalação e execução dos testes
