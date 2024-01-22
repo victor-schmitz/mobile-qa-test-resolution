@@ -129,11 +129,6 @@ Para fazer os testes da tela, você precisa primeiramente ter instalado as ferra
 npm install -g appium
 npm install -g appium-doctor
 ```
-- Em seguida, execute:
-
-```bash
-appium-doctor --android
-```
 
 5. Instale o Appium Server GUI (Appium-Server-GUI-windows-1.22.3-4.exe
 ): https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4
@@ -163,15 +158,16 @@ pip install robotframework-appiumlibrary
     Exemplo: 
     `...                 udid=emulator-5544`
 
-11. Abra o Appium server GUI e inicie um servidor
+11. Abra o Appium server GUI
 
-12. Com tudo pronto, entre na pasta `test_screen`
+12. No Appium Server GUI, clique em `Edit Configurations` e onde diz `ANDROID_HOME`, cole o caminho que você usou para configurar as variáveis de ambiente do Android Studio. Será algo como `C:\Users\usuario\AppData\Local\Android\Sdk`
+
+13. Com tudo pronto, entre na pasta `test_screen`
 
 ```bash
 cd test_screen
 ```
    
-
 13. Digite o seguite comando para executar os testes:
 
 ```bash
