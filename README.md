@@ -113,7 +113,7 @@ por:
 ### Teste de tela
 - [x] Fazer teste de tela (bônus)
 
-Nessa etapa, foram utilizados [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
+Nessa etapa, foram utilizados [Python](https://www.python.org/), [Android Studio](https://developer.android.com/studio?hl=pt-br), [Appium](https://appium.io/docs/en/2.4/) e [Robot Framework](https://robotframework.org/) para realizar os testes automatizados das telas.
 
 Para fazer os testes da tela, você precisa primeiramente ter instalado as ferramentas para [executar o Projeto](#como-executar-o-projeto), e logo em seguida seguir estas etapas:
 
