@@ -69,7 +69,7 @@ yarn global add expo-cli
 4. Clone este repositório para o seu computador:
 
 ```bash
-git clone https://github.com/victor-schmitz/mobile-qa-test-resolution_1.git
+git clone https://github.com/victor-schmitz/mobile-qa-test-resolution.git
 ```
 
 5. Navegue até a pasta do projeto clonado e instale as dependências:
