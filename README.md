@@ -75,7 +75,7 @@ git clone https://github.com/victor-schmitz/mobile-qa-test-resolution.git
 5. Navegue até a pasta do projeto clonado e instale as dependências:
 
 ```bash
-cd mobile-qa-test-resolution_1/
+cd mobile-qa-test-resolution/
 yarn install --force
 ```
 
